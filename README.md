@@ -1,8 +1,8 @@
 # OrderMenu
 Grupprojekt med SCRUM.
 
-# Färger
+# sprint 0 backlog 
 
-# Design
+# sprint 1 backlog
 
-# Navigering
+//Input content & status for stories.
