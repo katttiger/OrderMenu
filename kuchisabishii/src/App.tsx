@@ -62,7 +62,7 @@ function App() {
                 </li>
                 <li>
                   <a href="#skaldjur" >
-                    <span data-bs-dismiss="modal" aria-label="Close">skaldjur</span>
+                    <span data-bs-dismiss="modal" aria-label="Close">skaldjur!</span>
                   </a>
                 </li>
               </ul>
