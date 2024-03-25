@@ -42,7 +42,7 @@ function App() {
             </div>
           </div>
 
-        ))};
+        ))}
       </div>
       <div className='card-group'>
         {drinks?.drinks.map((drinks) => (
@@ -55,7 +55,7 @@ function App() {
             </div>
           </div>
 
-        ))};
+        ))}
       </div>
     </>
   )
