@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react'
 import './App.css'
-import { DrinkCard } from './components/cocktailcard';
 import { Navbar } from './components/navbar';
 import { FoodList } from './components/foodlist';
+import { DrinkList } from './components/drinklist';
 
 //Header
 //Navigate to food/drink/snacks
@@ -12,39 +11,34 @@ import { FoodList } from './components/foodlist';
 //Add/remove buttons
 //=>components?
 
-const cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink";
-
+enum foodcategories {
+  skaldjur,
+  kött
+}
+enum drinkCategories {
+  Beer, OrdinaryDrink, SoftDrink, CoffeeTea, HomemadeLiqueur
+}
 function App() {
 
-  const [] = useState();
-  const [drinks, setDrinks] = useState<Drinks>();
+  const foodCategories = ['skaldjur', 'kött']
+  const drinkCategories = ['Beer', 'Ordinary Drink', 'Soft Drink', 'Coffee%20\/%20Tea', 'Homemade Liqueur']
 
-  const categories = ['skaldjur', 'kött']
-
-
-  useEffect(() => {
-    fetch(cocktailUrl)
-      .then((res) => res.json())
-      .then((data) => setDrinks(data));
-  }, []);
 
   return (
     <>
-
       <div className='container-fluid'>
         <header>
           <h1>Kuchisabishii</h1>
         </header>
         <Navbar></Navbar>
-
-
-        {categories.map((c) => (
+        
+        {foodCategories.map((c) => (
           <FoodList key={c} category={c} />
         ))}
-
-        {drinks?.drinks.slice(0, 5).map((drink) => (
-          <DrinkCard key={drink.idDrink} drink={drink} />
+        {drinkCategories.map((c) => (
+          <DrinkList key={c} category={c} />
         ))}
+
       </div>
       <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
@@ -55,16 +49,20 @@ function App() {
             </div>
             <div className="modal-body">
               <ul>
-                <li>
-                  <a href="#kött" >
-                    <span data-bs-dismiss="modal" aria-label="Close">kött</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#skaldjur" >
-                    <span data-bs-dismiss="modal" aria-label="Close">skaldjur!</span>
-                  </a>
-                </li>
+                {foodCategories.map((c) => (
+                  <li>
+                    <a href={`#${c}`} >
+                      <span data-bs-dismiss="modal" aria-label="Close">{c}</span>
+                    </a>
+                  </li>
+                ))}
+                {drinkCategories.map((c) => (
+                  <li>
+                    <a href={`#${c}`} >
+                      <span data-bs-dismiss="modal" aria-label="Close">{c}</span>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="modal-footer">

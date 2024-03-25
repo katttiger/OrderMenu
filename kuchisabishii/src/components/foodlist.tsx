@@ -26,7 +26,7 @@ export const FoodList = ({ category }: { category: string }) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <span data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  <i className="fas fa-bars"></i>
+                  <i className="fas fa-bars" ></i>
                 </span>
               </li>
 
