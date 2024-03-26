@@ -19,7 +19,7 @@ export const Cocktails = () => {
                         <div className="modal-body">
                             <ul>
                                 {drinkCategories.map((c) => (
-                                    <li>
+                                    <li key={c}>
                                         <a href={`#${c}`} >
                                             <span data-bs-dismiss="modal" aria-label="Close">{c}</span>
                                         </a>
