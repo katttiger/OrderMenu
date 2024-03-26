@@ -1,7 +1,7 @@
 import { FoodList } from "../components/foodlist"
 
 export const Food = () => {
-    const foodCategories = ['skaldjur', 'kött']
+    const foodCategories = ['Seafood', 'Chicken', 'Vegetarian', 'Beef']
 
     return (<>
         {foodCategories.map((c) => (
@@ -17,7 +17,7 @@ export const Food = () => {
                         <div className="modal-body">
                             <ul>
                                 {foodCategories.map((c) => (
-                                    <li>
+                                    <li key={c}>
                                         <a href={`#${c}`} >
                                             <span data-bs-dismiss="modal" aria-label="Close">{c}</span>
                                         </a>
