@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom"
+
 export const Navbar = () => {
-        return (
-            <>
+    return (
+        <>
             <div className="NavBar d-flex justify-content-between text-dark">
-                <a href="">Food</a>
-                <a href="">Sides</a>
-                <a href="">Cocktails</a>
+                <Link to="/food">Food</Link >
+                <Link to="/sides">Sides</Link >
+                <Link to="/drinks">Cocktails</Link >
             </div>
-            </>
-        )
-    }
+        </>
+    )
+}

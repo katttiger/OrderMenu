@@ -31,7 +31,7 @@ export const DrinkList = ({ category }: { category: string }) => {
                 </div>
             </nav>
             {drinks?.drinks.slice(0, 5).map((drink) => (
-                <DrinkCard key={drink.idDrink} drink={drink} />
+                <DrinkCard key={drink.idDrink} drink={drink}/>
             ))}
         </>
     )
