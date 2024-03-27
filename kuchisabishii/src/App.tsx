@@ -20,11 +20,12 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<Food />}></Route>
           <Route path='/food' element={<Food />}></Route>
           <Route path='/sides' element={<Sides />}></Route>
           <Route path="/drinks" element={<Cocktails />}></Route>
           {/* WildCard Route AKA alla andra route går mot denna*/}
-          
+          <Route path='*' element={<Food />}></Route>
         </Route>
       </Routes>
     </Router>

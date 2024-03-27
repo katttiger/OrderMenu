@@ -54,6 +54,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+#carouselExampleSlidesOnly .carousel-inner .carousel-item img{
+   bottom:50px
+} 
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

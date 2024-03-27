@@ -8,12 +8,13 @@ export const DrinkList = ({ category }: { category: string }) => {
     useEffect(() => {
         fetch(cocktailUrl)
             .then((res) => res.json())
-            .then((data) => setDrinks(data));
+            .then((data) => setDrinks(data))
+             
     }, []);
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary" id={category}>
+            <nav className="navbar bg-body-tertiary" id={category}>
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">{category}</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,13 +1,14 @@
 import { FoodList } from "../components/foodlist"
 
 export const Sides = () => {
-    const foodCategories = ['skaldjur', 'kött']
+    const foodCategories = ['Seafood', 'Chicken', 'Vegetarian', 'Beef']
 
     return (
         <>
-            {foodCategories.map((c) => (
+        <div >{foodCategories.map((c) => (
                 <FoodList key={c} category={c} />
-            ))}
+            ))}</div>
+            
             <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
@@ -18,7 +19,7 @@ export const Sides = () => {
                         <div className="modal-body">
                             <ul>
                                 {foodCategories.map((c) => (
-                                    <li>
+                                    <li key={c}>
                                         <a href={`#${c}`} >
                                             <span data-bs-dismiss="modal" aria-label="Close">{c}</span>
                                         </a>
