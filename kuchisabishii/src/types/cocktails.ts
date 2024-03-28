@@ -2,7 +2,7 @@
 type Drink = {
     strDrink:string;
     strDrinkThumb: string;
-    idDrink: number;
+    idDrink: string;
     price: number;
 }
 

@@ -1,24 +1,17 @@
-import { CartItem } from "../types/cart";
+//import { CartItem } from "../types/cart";
 
-const addToCart = <T extends Food | Drink, >(cart: CartItem[], item: T) => {
+// const addToCartGeneric = <T>(cart: CartItem[], item: T) : void => {
 
-    let CartItem: CartItem =
-    {
-      product: item,
-      quantity: 1,
-      totalItemPrice: item.price
-    }
+//     const isItemICart = cart.product.find((item) => item.product === item);
 
-    const isItemICart = cart.find((item) => item.product === item);
+//     if (isItemICart) {
+//       isItemICart.quantity++;
+//       isItemICart.totalItemPrice = (isItemICart.product.price * isItemICart.quantity);
+//     }
 
-    if (isItemICart) {
-      isItemICart.quantity++;
-      isItemICart.totalItemPrice = (isItemICart.product.price * isItemICart.quantity);
-    }
-
-    else {
-      cart.push(CartItem);
-    }
+//     else {
+//       cart.push(CartItem);
+//     }
     
-    console.log(cart)
-  }
+//     console.log(cart)
+//   }

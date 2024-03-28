@@ -5,7 +5,8 @@ import { Sides } from './pages/sides';
 import { Food } from './pages/food';
 import { Layout } from './components/layout';
 import { createContext, useState } from 'react';
-import { CartItem } from './types/cart';
+import { CartItemtest } from './types/cart';
+import { Cart } from './pages/cart';
 
 //Shoppingcart
 //Add logic
@@ -20,10 +21,10 @@ import { CartItem } from './types/cart';
 //   addToCart: () => { },
 // });
 
-export const CartContext = createContext<CartItem[]>([]);
+export const CartContext = createContext<CartItemtest[]>([]);
 
 function App() {
-  const [cart] = useState<CartItem[]>([]);
+  const [cart] = useState<CartItemtest[]>([]);
 
   return (
     <>
@@ -35,6 +36,7 @@ function App() {
             <Route path='/food' element={<Food />}></Route>
             <Route path='/sides' element={<Sides />}></Route>
             <Route path="/drinks" element={<Cocktails />}></Route>
+            <Route path='/cart' element={<Cart />}></Route>
             {/* WildCard Route AKA alla andra route går mot denna*/}
             <Route path='*' element={<Food />}></Route>
           </Route>

@@ -25,7 +25,7 @@ export const Food = () => {
         {foodCategories.map((c) => (
             <FoodList key={c} category={c} />
         ))}
-        <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true" data-interval={1000}>
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
