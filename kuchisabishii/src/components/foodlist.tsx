@@ -34,14 +34,18 @@ export const FoodList = ({ category }: { category: string }) => {
       quantity: 1,
       totalItemPrice: food.price
     }
-    const isItemICart = cart.find((item) => item.product === food)
+
+    const isItemICart = cart.find((item) => item.product === food);
+
     if (isItemICart) {
       isItemICart.quantity++;
       isItemICart.totalItemPrice = (isItemICart.product.price * isItemICart.quantity);
     }
+
     else {
       cart.push(CartItem);
     }
+    
     console.log(cart)
   }
 
