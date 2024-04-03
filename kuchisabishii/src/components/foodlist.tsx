@@ -1,14 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { Foodcard } from "./foodcard";
 import { CartContext } from "../App";
-import { CartItemtest } from "../types/cart";
+//import { CartItemtest } from "../types/cart";
 
 
 export const FoodList = ({ category }: { category: string }) => {
   let url = `https://iths-2024-recept-grupp9-40k2zx.reky.se/categories/${category}/recipes`;
 
   const [food, setFood] = useState<Food[]>([]);
-  const cart = useContext(CartContext);
+  const {cart, addToCarttest} = useContext(CartContext);
+
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -46,31 +47,31 @@ export const FoodList = ({ category }: { category: string }) => {
   //   setRefresh(!refresh);
   // }
 
-  const [refresh, setRefresh] = useState(false);
+ // const [refresh, setRefresh] = useState(false);
 
   //using mapping to add to cart
-  const addToCarttest = (id: string, title: string, price: number) => {
+  // const addToCarttest = (id: string, title: string, price: number) => {
 
-    const isItemICart = cart.find((item) => item.id === id);
-    if (isItemICart) {
-      isItemICart.quantity++;
-      isItemICart.totalItemPrice = (price * isItemICart.quantity);
-    }
-    else {
-      let CartItem: CartItemtest =
-      {
-        id: id,
-        title: title,
-        singleItemPrice: price,
-        quantity: 1,
-        totalItemPrice: price
-      }
-      cart.push(CartItem);
-    }
-    console.log(cart);
-    // console.log(cart.find((c) => c.product === food)?.quantity);
-    setRefresh(!refresh);
-  }
+  //   const isItemICart = cart.find((item) => item.id === id);
+  //   if (isItemICart) {
+  //     isItemICart.quantity++;
+  //     isItemICart.totalItemPrice = (price * isItemICart.quantity);
+  //   }
+  //   else {
+  //     let CartItem: CartItemtest =
+  //     {
+  //       id: id,
+  //       title: title,
+  //       singleItemPrice: price,
+  //       quantity: 1,
+  //       totalItemPrice: price
+  //     }
+  //     cart.push(CartItem);
+  //   }
+  //   console.log(cart);
+  //   // console.log(cart.find((c) => c.product === food)?.quantity);
+  //   setRefresh(!refresh);
+  // }
 
   // const addToCart = (cart: CartItem[], item: Food | Drink) => {
   //   if (isFood(item)) {

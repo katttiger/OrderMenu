@@ -13,36 +13,60 @@ import { Cart } from './pages/cart';
 //Add/remove buttons
 //=>components?
 
-// export const CartContext = createContext<{
-//   cart: CartItem[];
-//   addToCart: (item: Food) => void;
-// }>({
-//   cart: [],
-//   addToCart: () => { },
-// });
+export const CartContext = createContext<{
+  cart: CartItemtest[];
+  addToCarttest: (id: string, title: string, price: number) => void;
+}>({
+  cart: [],
+  addToCarttest: () => { },
+});
 
-export const CartContext = createContext<CartItemtest[]>([]);
+// export const CartContext = createContext<CartItemtest[]>([]);
 
 function App() {
+  const [refresh, setRefresh] = useState(false);
   const [cart] = useState<CartItemtest[]>([]);
+
+  const addToCarttest = (id: string, title: string, price: number) => {
+
+    const isItemICart = cart.find((item) => item.id === id);
+    if (isItemICart) {
+      isItemICart.quantity++;
+      isItemICart.totalItemPrice = (price * isItemICart.quantity);
+    }
+    else {
+      let CartItem: CartItemtest =
+      {
+        id: id,
+        title: title,
+        singleItemPrice: price,
+        quantity: 1,
+        totalItemPrice: price
+      }
+      cart.push(CartItem);
+    }
+    console.log(cart);
+    // console.log(cart.find((c) => c.product === food)?.quantity);
+    setRefresh(!refresh);
+  }
 
   return (
     <>
-     <CartContext.Provider value={cart}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Food />}></Route>
-            <Route path='/food' element={<Food />}></Route>
-            <Route path='/sides' element={<Sides />}></Route>
-            <Route path="/drinks" element={<Cocktails />}></Route>
-            <Route path='/cart' element={<Cart />}></Route>
-            {/* WildCard Route AKA alla andra route går mot denna*/}
-            <Route path='*' element={<Food />}></Route>
-          </Route>
-        </Routes>
-      </Router>
-     </CartContext.Provider >
+      <CartContext.Provider value={{ cart, addToCarttest }}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Food />}></Route>
+              <Route path='/food' element={<Food />}></Route>
+              <Route path='/sides' element={<Sides />}></Route>
+              <Route path="/drinks" element={<Cocktails />}></Route>
+              <Route path='/cart' element={<Cart />}></Route>
+              {/* WildCard Route AKA alla andra route går mot denna*/}
+              <Route path='*' element={<Food />}></Route>
+            </Route>
+          </Routes>
+        </Router>
+      </CartContext.Provider >
     </>
   )
 }

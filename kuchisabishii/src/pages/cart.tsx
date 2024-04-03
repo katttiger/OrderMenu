@@ -1,18 +1,20 @@
 import { CartContext } from "../App";
 import { useContext, useEffect, useState } from "react";
-import { CartItemtest } from "../types/cart";
+//import { CartItemtest } from "../types/cart";
 
 export const Cart = () => {
-    const cart = useContext(CartContext);
-    const [refresh, setRefresh] = useState(false);
+    const {cart} = useContext(CartContext);
+    // const [refresh, setRefresh] = useState(false);
     const [total, setTotal] = useState(0);
+
     useEffect(() => 
     {
         let currentTotal = 0
         cart.forEach((item) => currentTotal += item.totalItemPrice) 
         setTotal(currentTotal);
     }, [])
-    const addToCarttest = (id: string, title: string, price: number) => {
+
+    const addToCarttest = (id: string, _title: string, price: number) => {
 
         const isItemICart = cart.find((item) => item.id === id);
         if (isItemICart) {
@@ -30,7 +32,7 @@ export const Cart = () => {
         //     }
         //     cart.push(CartItem);
         // }
-        setTotal((currentTotal) => total + price);
+        setTotal(total + price);
     };
 
     const removeFromCart = (id: string) => {
@@ -44,8 +46,8 @@ export const Cart = () => {
         }
 
         // console.log(cart.find((c) => c.product === food)?.quantity);
-        setRefresh(!refresh);
-        setTotal(currentTotal => total - isItemInCart?.singleItemPrice!);
+        // setRefresh(!refresh);
+        setTotal(total - isItemInCart?.singleItemPrice!);
     }
 
     return (
@@ -63,8 +65,9 @@ export const Cart = () => {
                         </tr>
                     ))}
                 </tbody>
+                {/* <p> as a child of <table> causing error in the console  */}
                 {cart.length > 0 ?
-                    <p>Sum: {total}</p> : <p>Your cart is empty.</p>}
+                    <p>Sum: {total}</p> : <p>Your cart is empty.</p>} 
             </table>
         </>
     )
