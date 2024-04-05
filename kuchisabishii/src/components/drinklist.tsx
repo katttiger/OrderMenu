@@ -5,7 +5,7 @@ import { CartContext } from "../App";
 export const DrinkList = ({ category }: { category: string }) => {
     const cocktailUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`;
     const [drinks, setDrinks] = useState<Drinks>();
-    const {cart, addToCarttest} = useContext(CartContext);
+    const {cart, addToCart, removeFromCart} = useContext(CartContext);
 
     useEffect(() => {
         fetch(cocktailUrl)
@@ -37,13 +37,11 @@ export const DrinkList = ({ category }: { category: string }) => {
                 {drinks?.drinks.slice(0, 5).map((drink) => (
                     <div key={drink.idDrink} className="col-lg-3 col-sm-12 col-md-6">
                         <DrinkCard drink={drink} />
-                        <button className="btn btn-danger" >-</button>
+                        <button className="btn btn-danger" onClick={() => removeFromCart(drink.idDrink)}>-</button>
                         <span>{cart.find((c) => c.id === drink.idDrink)?.quantity}</span>
-                        {/* <button className="btn btn-success" onClick={() => addToCart(cart, food)}>+</button> */}
-                        <button className="btn btn-success" onClick={() => addToCarttest(drink.idDrink, drink.strDrink, drink.price)}>+</button>
+                        <button className="btn btn-success" onClick={() => addToCart(drink.idDrink, drink.strDrink, drink.price)}>+</button>
                     </div>
                 ))}
-
             </div>
 
         </>

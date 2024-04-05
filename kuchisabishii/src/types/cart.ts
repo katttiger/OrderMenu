@@ -1,4 +1,4 @@
-export type CartItem =
+/*export type CartItem =
 {
     id: string,
     product: Food | Drink,
@@ -6,10 +6,10 @@ export type CartItem =
     totalItemPrice:number,
     singleItemPrice:number 
  
-}
+}*/
 
 {/* "CartItemDTO" */}
-export type CartItemtest =
+export type CartItem =
 {
     id: string,
     title: string,
