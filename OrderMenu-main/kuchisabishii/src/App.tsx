@@ -47,7 +47,8 @@ function App() {
     }
     setCart([...cart]);
   }
-
+  
+  // Tänka över kring ifall kunden råkar ta bort av misstag?
   const removeFromCart = (id: string) => {
     let isItemInCart = cart.find((item) => item.id === id)
     if (isItemInCart) {
