@@ -9,3 +9,9 @@
     padding: 0;
     margin: 0; 
 }
+
+.centered-items{
+    margin-left: auto;
+    margin-right: auto;
+    width:3em;
+}

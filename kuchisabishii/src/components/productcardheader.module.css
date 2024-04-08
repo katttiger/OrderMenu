@@ -1,3 +1,11 @@
 .header {
-    box-shadow: 0em 9em 10em inset black;
+    color: white;
+    background-image: linear-gradient(to bottom, black 15%, transparent 99%);
+    height: 20%;
+    padding: 1em;
+}
+
+p{
+    /* Work in progress */
+    color:tan;
 }

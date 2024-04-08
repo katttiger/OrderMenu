@@ -1,4 +1,4 @@
-import "./productcardheader.module.css";
+import styles from "./productcardheader.module.css";
 
 export const ProductCardHeader = ({
   title,
@@ -10,12 +10,12 @@ export const ProductCardHeader = ({
 }) => {
   return (
     <>
-      <div className="header">
+      <div className={styles.header}>
         <div className="d-flex justify-content-between">
           <h1>{title}</h1>
           <h1>{price} SEK</h1>
         </div>
-        <p>{description}</p>
+        <p className={styles.p}>{description}</p>
       </div>
     </>
   );
