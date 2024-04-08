@@ -10,7 +10,7 @@ a{
 
 .links > a{
     width: 25%;
-    background-color: red;
+    background-color: var(--primary-bg-color);
     text-align: center;
 }
 
@@ -22,14 +22,14 @@ a{
 
 @keyframes background-active{
     0%{
-        background-color: red;
+        background-color: var(--primary-bg-color);
     }
     
-    50%{
+    20%{
         background-color: rgb(158, 3, 3);
     }
     
     100%{
-        background-color: red;
+        background-color: var(--primary-bg-color);
     }
 }

@@ -1,0 +1,11 @@
+:root{
+    --primary-bg-color:#ec0000;
+    --second-bg-color:#ec2400;
+    --third-bg-color:#ec5300;
+    --fourth-bg-color:#ec9b00;
+    --fifth-bg-color:#ecca00;
+}
+.container-fluid {
+    padding: 0;
+    margin: 0; 
+}

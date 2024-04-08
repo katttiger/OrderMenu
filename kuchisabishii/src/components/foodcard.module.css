@@ -1,0 +1,13 @@
+.productCard{
+    width: 100%;
+    height: 65vh;
+    background-size: 600px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+}
+
+.cardHeader{
+    color: white;
+    padding:20px;
+}
