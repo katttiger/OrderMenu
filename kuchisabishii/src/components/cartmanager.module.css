@@ -1,0 +1,17 @@
+#remove {
+    /* margin-top: 10rem;
+    margin-left: 2rem; */
+
+}
+
+#add {
+    /* margin-top: 10rem;
+    margin-left: 18rem; */
+}
+
+.flexContainer {
+   display: flex;
+   justify-content: center;
+   justify-content: space-evenly;
+   margin-top: 10rem;
+}
