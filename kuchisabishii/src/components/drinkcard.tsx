@@ -23,7 +23,7 @@ export const DrinkCard = ({ drink }: { drink: Drink }) => {
           title={drink.strDrink}
           price={drink.price}
         />
-        <CartManager id={drink._id} title={drink.title} price={drink.price} />
+        <CartManager id={drink.idDrink} title={drink.title} price={drink.price} />
       </div>
 
     </>
