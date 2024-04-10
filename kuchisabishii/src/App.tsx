@@ -20,7 +20,7 @@ export const CartContext = createContext<{
   cart: [],
   addToCart: () => { },
   removeFromCart: () => { },
-  clearCart:() => {},
+  clearCart: () => { },
 });
 
 function App() {
@@ -47,8 +47,7 @@ function App() {
     }
     setCart([...cart]);
   }
-  
-  // Tänka över kring ifall kunden råkar ta bort av misstag?
+  // över kring ifall kunden råkar ta bort av misstag ?
   const removeFromCart = (id: string) => {
     let isItemInCart = cart.find((item) => item.id === id)
     if (isItemInCart) {
@@ -61,8 +60,7 @@ function App() {
     setCart([...cart]);
   }
 
-  const clearCart = () => 
-  {
+  const clearCart = () => {
     setCart([]);
   }
 

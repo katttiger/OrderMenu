@@ -1,21 +1,21 @@
 import { useState, useEffect, useContext } from "react";
-import { DrinkCard } from "./cocktailcard";
-import { CartContext } from "../App";
+import { DrinkCard } from "./drinkcard";
+import {CategoryBar} from "./categorybar";
 
 export const DrinkList = ({ category }: { category: string }) => {
     const cocktailUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`;
+    
     const [drinks, setDrinks] = useState<Drinks>();
-    const {cart, addToCart, removeFromCart} = useContext(CartContext);
 
     useEffect(() => {
         fetch(cocktailUrl)
             .then((res) => res.json())
             .then((data) => setDrinks(data))
-
     }, []);
 
     return (
         <>
+<<<<<<< HEAD
             <nav className="navbar bg-body-tertiary" id={category}>
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">{category}</a>
@@ -42,8 +42,19 @@ export const DrinkList = ({ category }: { category: string }) => {
                         <button className="btn btn-success" onClick={() => addToCart(drink.idDrink, drink.strDrink, drink.price)}>+</button>
                     </div>
                 ))}
+=======
+          <div className="container-fluid">
+            <CategoryBar category={category} />
+    
+            <div className="row gy-5">
+                    {drinks?.drinks.slice(0, 5).map((drink) => (
+                        <div key={drink.idDrink} className="col-lg-3 col-sm-12 col-md-6">
+                            <DrinkCard drink={drink} />
+                        </div>
+                    ))}
+                </div>
+>>>>>>> 26af639689930985f315d0d3b680dadc61f2a45e
             </div>
-
         </>
     )
 }

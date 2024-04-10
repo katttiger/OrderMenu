@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .cartFooter{
     background-image: url("../assets/images/WoodLight.png");
     display: flex;
@@ -31,3 +32,15 @@
     text-align: center;
     color: orange;
 } 
+=======
+.sendOrder {
+    display: flex;
+    justify-content: center;
+}
+
+.payment {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+>>>>>>> 26af639689930985f315d0d3b680dadc61f2a45e
