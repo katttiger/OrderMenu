@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { Foodcard } from "./foodcard";
-import { CartContext } from "../App";
 
 export const FoodList = ({ category }: { category: string }) => {
   let url = `https://iths-2024-recept-grupp9-40k2zx.reky.se/categories/${category}/recipes`;
 
   const [food, setFood] = useState<Food[]>([]);
-  const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
   useEffect(() => {
     fetch(url)
@@ -14,7 +12,6 @@ export const FoodList = ({ category }: { category: string }) => {
       .then((data) => setFood(data))
 
   }, []);
-
 
 
   return (
@@ -42,10 +39,7 @@ export const FoodList = ({ category }: { category: string }) => {
           {food.map((food) => (
             <div key={food._id} className="col-lg-3 col-sm-12 col-md-6">
               <Foodcard food={food} />
-              <button className="btn btn-danger" onClick={() => removeFromCart(food._id)}>-</button>
-              <span>{cart.find((c) => c.id === food._id)?.quantity}</span>
-              <button className="btn btn-success" onClick={() => addToCart(food._id, food.title, food.price)}>+</button>
-            </div>
+        </div>
           ))}
         </div>
       </div>
