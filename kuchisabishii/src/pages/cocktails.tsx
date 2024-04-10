@@ -1,15 +1,14 @@
 import { DrinkList } from "../components/drinklist"
-
 export const Cocktails = () => {
 
     const drinkCategories = ['Beer', 'Ordinary Drink', 'Soft Drink', 'Coffee%20\/%20Tea', 'Homemade Liqueur']
 
-    return(
+    return (
         <>
-        {drinkCategories.map((c) => (
-          <DrinkList key={c} category={c} />
-        ))}
-        <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+            {drinkCategories.map((c) => (
+                <DrinkList key={c} category={c} />
+            ))}
+            <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">

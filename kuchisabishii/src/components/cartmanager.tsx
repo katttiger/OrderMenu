@@ -12,29 +12,28 @@ export const CartManager = ({
   price: number;
 }) => {
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const isItemInCart = cart.some((item) => item.id === id);
 
   return (
     <>
-      <div className="row">
-        {/* <div className={styles.flexContainer}> */}
-        <div className="col-4 m-auto">
+      <div className={styles.flexContainer}>
+        <div>
           <button
-            id={styles.remove}
-            className="btn btn-danger col-4"
+            className={`btn btn-danger ${styles.remove}`}
             onClick={() => removeFromCart(id)}
+            style={{ visibility: isItemInCart ? "visible" : "hidden" }}
           >
             -
           </button>
         </div>
 
-        <div className="col-4">
+        <div className={styles.count}>
           <span>{cart.find((c) => c.id === id)?.quantity}</span>
         </div>
 
-        <div className="col-4">
+        <div>
           <button
-            id={styles.add}
-            className="btn btn-success col-4"
+            className={`btn btn-success ${styles.add}`}
             onClick={() => addToCart(id, title, price)}
           >
             +

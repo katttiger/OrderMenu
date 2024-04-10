@@ -1,11 +1,13 @@
 .header {
     color: white;
-    background-image: linear-gradient(to bottom, black 15%, transparent 99%);
-    height: 20%;
+    background-image: linear-gradient(to bottom, black 5%, transparent 99%);
+    height: 35%;
     padding: 1em;
 }
 
-p{
-    /* Work in progress */
-    color:tan;
+.p {
+    font-weight: 750;
+    color: whitesmoke;
+    text-align: left;
+    font-style: italic;
 }
