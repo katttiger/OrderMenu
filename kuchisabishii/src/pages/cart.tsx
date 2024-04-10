@@ -44,6 +44,10 @@ export const Cart = () => {
         <>
             <h1>Checkout</h1>
             <NavLink to={'/'}>Go Back</NavLink>
+            <div className="row m-0">
+                <div className={`${styles.Menu} col-6`}>Order</div>
+                <div className={`${styles.Menu} col-6`} >Pay</div>
+            </div>
             <div className="container-fluid" style={{overflow: 'scroll', maxHeight: '60vh'}}>
                 <table className="table">
                     <tbody>
@@ -63,9 +67,9 @@ export const Cart = () => {
             
             <div className={styles.cartFooter} >
             {cart.length > 0 ?
-                    <h4>Sum: {total}</h4> : <h4>Your cart is empty.</h4>}
+                    <h4>Total: {total}:-</h4> : <h4>Your cart is empty.</h4>}
                 <input type="text" placeholder="Table Code"></input>
-                <button className="btn btn-success" onClick={() => clearCart()}>Send Order</button>
+                <button className="btn btn-secondary" onClick={() => clearCart()}>Send Order</button>
                 {/* <h4>Payment</h4> */}
             </div>
            
