@@ -35,7 +35,7 @@ export const FoodList = ({ category }: { category: string }) => {
           </div>
         </nav>
 
-        <div className="row gy-5">
+        <div className="row gy-1 m-0">
           {food.map((food) => (
             <div key={food._id} className="col-lg-3 col-sm-12 col-md-6">
               <Foodcard food={food} />
