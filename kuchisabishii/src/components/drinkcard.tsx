@@ -22,8 +22,8 @@ export const DrinkCard = ({ drink }: { drink: Drink }) => {
         <ProductCardHeader
           title={drink.strDrink}
           price={drink.price}
-        />
-        <CartManager id={drink.idDrink} title={drink.title} price={drink.price} />
+          description={""} />
+        <CartManager id={drink.idDrink} title={drink.strDrink} price={drink.price} />
       </div>
 
     </>

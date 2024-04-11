@@ -3,7 +3,7 @@ import styles from './navbar.module.css'
 export const Navbar = () => {
     
     return (
-        //Imporove design
+        //Improve design
         <>
             <div className={`NavBar d-flex justify-content-between text-dark ${styles.links}`}>
                 <NavLink to="/food" className={({ isActive }) => isActive ? styles.active : ""}>Food</NavLink >
