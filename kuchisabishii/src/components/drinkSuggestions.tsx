@@ -19,32 +19,25 @@ export const DrinkSuggestions = () => {
             <div className={styles.suggestionBar}>
                 <div className={styles.textStyle}>Cocktail pairings</div>
 
-                {/* Modal? */}
-                {/*    <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Choose a category</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            <ul>
-                                {drinkCategories.map((c) => (
-                                    <li key={c}>
-                                        <a href={`#${c}`} >
-                                            <span data-bs-dismiss="modal" aria-label="Close">{c}</span>
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div></div> */}
-                
                 {/* This is going to be a "map" over the list With parameters. Now is just the same drink...Fix routing with parameters  */}
                 <Link to="/drinkSuggestion">
                     <div className={styles.suggestionButton} style={{ backgroundImage: `url(${drinkSuggestion?.strDrinkThumb})` }} />
+                    {/* Modal?
+                    <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h1 className="modal-title fs-5" id="exampleModalLabel">Choose a category</h1>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div className="modal-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div> */}
                 </Link>
+
                 <Link to="/drinkSuggestion">
                     <div className={styles.suggestionButton} style={{ backgroundImage: `url(${drinkSuggestion?.strDrinkThumb})` }} />
                 </Link>

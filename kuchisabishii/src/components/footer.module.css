@@ -1,0 +1,10 @@
+.bottom {
+    color: antiquewhite;
+    background-image: url("../assets/images/WoodDark.png");
+    background-repeat: no-repeat;
+    height: 6rem;
+    bottom: 1rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-top: 1px;
+}

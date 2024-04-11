@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom"
 import { Header } from "./header"
-import { Bottom } from "./bottom"
+import { Sidebottom } from "./footer"
 
 export const Layout = () => {
     return (
@@ -8,7 +8,7 @@ export const Layout = () => {
             <div className="container-fluid">
                 <Header />
                 <Outlet />
-                <Bottom />
+                <Sidebottom />
             </div>
         </>
     )

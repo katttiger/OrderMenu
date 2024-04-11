@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import styles from './navbar.module.css'
 export const Navbar = () => {
-    
+
     return (
         //Improve design
         <>

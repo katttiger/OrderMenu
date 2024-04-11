@@ -1,6 +1,7 @@
 .suggestionBar {
     background-image: url("../assets/images/WoodLight.png");
     width: 100%;
+    margin-top: 7rem;
     height: 5rem;
     display: flex;
     justify-content: space-evenly;
@@ -17,11 +18,11 @@
     height: 70px;
     background-size: 60px auto;
     background-repeat: no-repeat;
-    
+
 
 }
 
-.textStyle{
+.textStyle {
     font-weight: 100;
     font-size: medium;
     font-size: large;

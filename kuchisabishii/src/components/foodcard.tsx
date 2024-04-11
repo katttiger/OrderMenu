@@ -6,7 +6,7 @@ import { CartContext } from "../App";
 import { DrinkSuggestions } from "./drinkSuggestions";
 
 export const Foodcard = ({ food }: { food: Food }) => {
-  const {cart} = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   const isItemInCart = cart.some((item) => item.id === food._id);
   return (
     <>
@@ -15,15 +15,15 @@ export const Foodcard = ({ food }: { food: Food }) => {
           title={food.title}
           description={food.description}
           price={food.price}
-          
+
         />
         <CartManager id={food._id} title={food.title} price={food.price} />
-      </div>
-      <div style={{ visibility: isItemInCart ? "visible" : "hidden" }}>
-        <DrinkSuggestions />
+        <div style={{ visibility: isItemInCart ? "visible" : "hidden" }}>
+          <DrinkSuggestions />
+        </div>
       </div>
 
-         
+
     </>
   );
 };

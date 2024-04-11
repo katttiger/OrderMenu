@@ -1,4 +1,4 @@
-.productCard{
+.productCard {
     width: 100%;
     height: 65vh;
     background-size: 600px auto;
@@ -7,7 +7,7 @@
     padding: 0;
 }
 
-.cardHeader{
+.cardHeader {
     color: white;
-    padding:20px;
+    padding: 20px;
 }
