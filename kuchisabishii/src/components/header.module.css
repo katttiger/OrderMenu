@@ -1,8 +1,6 @@
-h1 {
+.Header{
+    background-image: url("../assets/images/WoodDark.png");
     text-align: center;
+    color: whitesmoke;
 }
 
-.p {
-    text-align: center;
-    color: black;
-}
