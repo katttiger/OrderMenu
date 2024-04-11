@@ -1,4 +1,30 @@
-<<<<<<< HEAD
+
+.MenuContainer{
+    height: 3em;
+    background-image: url("../assets/images/WoodLight.png");
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: whitesmoke;    
+}
+
+.tableRow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+    .tableRow button{
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        padding: 0;
+        text-align: center;
+        /* margin-top: 0.5em; */        
+    }
+
+
+
 .cartFooter{
     background-image: url("../assets/images/WoodLight.png");
     display: flex;
@@ -32,7 +58,7 @@
     text-align: center;
     color: orange;
 } 
-=======
+
 .sendOrder {
     display: flex;
     justify-content: center;
@@ -43,4 +69,4 @@
     justify-content: center;
     margin-top: 2rem;
 }
->>>>>>> 26af639689930985f315d0d3b680dadc61f2a45e
+
