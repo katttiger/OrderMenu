@@ -14,7 +14,9 @@ export const DrinkSuggestions = () => {
                 {/*                     
             <DrinkCard/>
             <DrinkCard/>
-            <DrinkCard/> */}
+            <DrinkCard/> 
+            */
+                }
             </div>
         </>
     )
