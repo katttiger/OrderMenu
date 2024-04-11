@@ -1,17 +1,28 @@
-#remove {
-    /* margin-top: 10rem;
-    margin-left: 2rem; */
-
-}
-
-#add {
-    /* margin-top: 10rem;
-    margin-left: 18rem; */
-}
-
 .flexContainer {
-   display: flex;
-   justify-content: center;
-   justify-content: space-evenly;
-   margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+    align-items: center;
+    height: 3em;
+}
+
+.count {
+    width: 2em;
+    color: whitesmoke;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+
+    text-shadow: 2px 2px 4px rgba(19, 18, 18, 0.5);
+}
+
+.add {
+
+    font-weight: bold;
+}
+
+.remove {
+
+    font-weight: bold;
 }

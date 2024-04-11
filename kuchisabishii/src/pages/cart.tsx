@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../App";
 import { useContext, useEffect, useState } from "react";
+import styles from "./cart.module.css"
 //import { CartItem } from "../types/cart";
 
 export const Cart = () => {
@@ -43,24 +44,35 @@ export const Cart = () => {
         <>
             <h1>Checkout</h1>
             <NavLink to={'/'}>Go Back</NavLink>
-            <table className="table">
-                <tbody>
-                    {cart.map((item) => (
-                        <tr>
-                            <button className="btn btn-danger" onClick={() => removeFromCarttest(item.id)}>-</button>
-                            <td>{item.quantity}</td>
-                            <td>{item.title}</td>
-                            <td>{item.totalItemPrice} SEK</td>
-                            <button className="btn btn-danger" onClick={() => addToCarttest(item.id, item.title, item.singleItemPrice)}>+</button>
-                        </tr>
-                    ))}
-                </tbody>
-                {cart.length > 0 ?
-                    <p>Sum: {total}</p> : <p>Your cart is empty.</p>}
-            </table>
-            <input type="text" placeholder="Table Code"></input>
-            <button className="btn btn-success" onClick={() => clearCart()}>Send Order</button>
-            <h4>Payment</h4>
+            <div className="row m-0">
+                <div className={`${styles.Menu} col-6`}>Order</div>
+                <div className={`${styles.Menu} col-6`} >Pay</div>
+            </div>
+            <div className="container-fluid" style={{overflow: 'scroll', maxHeight: '60vh'}}>
+                <table className="table">
+                    <tbody>
+                        {cart.map((item) => (
+                            <tr>
+                                <button className="btn btn-danger" onClick={() => removeFromCarttest(item.id)}>-</button>
+                                <td><h4>{item.quantity}</h4></td>
+                                <td><h6>{item.title}</h6></td>
+                                <td><h6>{item.totalItemPrice} SEK</h6></td>
+                                <button className="btn btn-danger" onClick={() => addToCarttest(item.id, item.title, item.singleItemPrice)}>+</button>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+           
+            
+            <div className={styles.cartFooter} >
+            {cart.length > 0 ?
+                    <h4>Total: {total}:-</h4> : <h4>Your cart is empty.</h4>}
+                <input type="text" placeholder="Table Code"></input>
+                <button className="btn btn-secondary" onClick={() => clearCart()}>Send Order</button>
+                {/* <h4>Payment</h4> */}
+            </div>
+           
         </>
     )
 }
