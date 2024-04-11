@@ -42,22 +42,20 @@ export const Cart = () => {
 
     return (
         <>
-            <h1>Checkout</h1>
-            <NavLink to={'/'}>Go Back</NavLink>
-            <div className="row m-0">
-                <div className={`${styles.Menu} col-6`}>Order</div>
-                <div className={`${styles.Menu} col-6`} >Pay</div>
+            <div className={styles.MenuContainer}>
+                <div className={`${styles.Menu}`} style={{textDecoration: 'underline'}}>Order</div>
+                <div className={`${styles.Menu}`}>Pay</div>
             </div>
-            <div className="container-fluid" style={{overflow: 'scroll', maxHeight: '60vh'}}>
+            <div className="container-fluid" style={{msOverflowY: 'scroll', maxHeight: '60vh'}}>
                 <table className="table">
                     <tbody>
                         {cart.map((item) => (
-                            <tr>
-                                <button className="btn btn-danger" onClick={() => removeFromCarttest(item.id)}>-</button>
-                                <td><h4>{item.quantity}</h4></td>
+                            <tr className={styles.tableRow}>
+                                <td><button className="btn btn-danger" onClick={() => removeFromCarttest(item.id)}><h4>-</h4></button></td>
+                                <td><h6>{item.quantity}</h6></td>
                                 <td><h6>{item.title}</h6></td>
                                 <td><h6>{item.totalItemPrice} SEK</h6></td>
-                                <button className="btn btn-danger" onClick={() => addToCarttest(item.id, item.title, item.singleItemPrice)}>+</button>
+                                <td><button className="btn btn-success" onClick={() => addToCarttest(item.id, item.title, item.singleItemPrice)}><h4>+</h4></button></td>
                             </tr>
                         ))}
                     </tbody>
