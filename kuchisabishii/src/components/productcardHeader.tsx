@@ -5,7 +5,7 @@ export const ProductCardHeader = ({
   description,
   price}: {
   title: string;
-  description: string;
+  description?: string;
   price: number;
 }) => {
   return (
