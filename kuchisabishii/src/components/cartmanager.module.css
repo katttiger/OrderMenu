@@ -9,7 +9,7 @@
 
 .count {
     width: 2em;
-    color: whitesmoke;
+    color: yellowgreen;
     font-size: 2.5em;
     font-weight: bold;
     text-align: center;
@@ -18,9 +18,11 @@
 
 .add {
     font-weight: bold;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .remove {
 
     font-weight: bold;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
