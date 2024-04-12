@@ -23,7 +23,7 @@ export const CartManager = ({
             onClick={() => removeFromCart(id)}
             style={{ visibility: isItemInCart ? "visible" : "hidden" }}
           >
-            -
+            <span><i className="fa fa-minus" aria-hidden="true"></i></span>
           </button>
         </div>
 
@@ -36,7 +36,7 @@ export const CartManager = ({
             className={`btn btn-success ${styles.add}`}
             onClick={() => addToCart(id, title, price)}
           >
-            +
+            <span><i className="fa fa-plus" aria-hidden="true"></i></span>
           </button>
         </div>
       </div>

@@ -1,35 +1,32 @@
 a{
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .links{
     color: white !important; 
-    border: 1px solid black;
+    border: 1px solid tan;
 }
 
 .links > a{
     width: 25%;
-    background-color: var(--primary-bg-color);
+    background-image: url(../assets/images/WoodLight.png);
     text-align: center;
 }
 
 .active{
-    color: white !important;
-    border-bottom: 1px solid white !important;
-    animation: background-active 0.5s ease-in-out;
+    color: whitesmoke !important;
+    border-bottom: 2px solid rgb(231, 207, 176);
+    transition: background-image color 0.6s ease-in-out;
+    background-image: url(../assets/images/WoodDark.png) !important;
 }
 
 @keyframes background-active{
     0%{
-        background-color: var(--primary-bg-color);
-    }
-    
-    20%{
-        background-color: rgb(158, 3, 3);
+        background-image: url(../assets/images/WoodDark.png);
     }
     
     100%{
-        background-color: var(--primary-bg-color);
+        background-image: url(../assets/images/WoodLight.png);
     }
 }
