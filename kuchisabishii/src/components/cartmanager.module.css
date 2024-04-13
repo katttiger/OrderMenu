@@ -2,27 +2,40 @@
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
-    margin-top: 3rem;
+    margin-top: 4rem;
     align-items: center;
-    height: 3em;
+    max-height: 3em;
 }
 
 .count {
     width: 2em;
-    color: yellowgreen;
-    font-size: 2.5em;
+    color: whitesmoke;
+    font-size: 3em;
     font-weight: bold;
     text-align: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.986);
+    text-shadow: 2px 2px 5px black;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
 }
 
 .add {
-    font-weight: bold;
-    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(5, 155, 5);
+    box-shadow: 2px 2px rgb(4, 71, 4);
 }
 
 .remove {
+    background-color: rgb(198, 4, 4);
+    box-shadow: 2px 2px rgb(76, 0, 0);
+}
 
+.add,
+.remove {
+    border: none;
+    font-size: 1.5em;
+    height: 2em;
     font-weight: bold;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    box-shadow: 2px 2px black;
+    
+
 }

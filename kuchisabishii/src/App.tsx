@@ -8,7 +8,7 @@ import { createContext, useState } from 'react';
 import { CartItem } from './types/cart';
 import { Cart } from './pages/cart';
 import { Payment } from './pages/payment';
-import { DrinkSuggestion } from './pages/drinkSuggestion';
+
 
 
 export const CartContext = createContext<{
@@ -76,7 +76,6 @@ function App() {
               <Route path="/drinks" element={<Cocktails />}></Route>
               <Route path='/cart' element={<Cart />}></Route>
               <Route path='/payment' element={<Payment />}></Route>
-              <Route path='/drinkSuggestion' element={<DrinkSuggestion strDrink={''} strDrinkThumb={''} idDrink={''} price={0} />}></Route>
               {/* WildCard Route AKA alla andra route går mot denna*/}
               <Route path='*' element={<Food />}></Route>
             </Route>

@@ -3,11 +3,11 @@ import styles from "./productcardheader.module.css";
 export const ProductCardHeader = ({
   title,
   description,
-  price }: {
-    title: string;
-    description: string;
-    price: number;
-  }) => {
+  price}: {
+  title: string;
+  description?: string;
+  price: number;
+}) => {
   return (
     <>
       <div className={styles.header}>

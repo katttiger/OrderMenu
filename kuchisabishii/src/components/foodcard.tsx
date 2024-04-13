@@ -1,4 +1,5 @@
 import styles from "./foodcard.module.css";
+import styless from "./drinkSuggestions.module.css";
 import { ProductCardHeader } from "./productcardHeader";
 import { CartManager } from "./cartmanager";
 import { useContext } from "react";
@@ -18,12 +19,11 @@ export const Foodcard = ({ food }: { food: Food }) => {
 
         />
         <CartManager id={food._id} title={food.title} price={food.price} />
-        <div className={styles.drinkSuggestion} style={{ visibility: isItemInCart ? "visible" : "hidden" }}>
-          <DrinkSuggestions />
-        </div>
+        <div style={{ visibility: isItemInCart ? "visible" : "hidden" }} className={styless.suggestionContainer}>
+        <DrinkSuggestions />
       </div>
-
-
+      </div>
+         
     </>
   );
 };

@@ -1,5 +1,11 @@
 .suggestionBar {
-    background-image: url("../assets/images/WoodLight.png");
+    /* background-image: url("../assets/images/WoodLight.png"); */
+    color: white;
+    background-image: linear-gradient(to top, black 5%, transparent 99%);
+    height: 35%;
+    padding: 1em;
+    /* width: 100%;
+    height: 5rem; */
     display: flex;
     border-radius: 25px;
     align-items: center;
@@ -21,17 +27,23 @@
 
     width: 85px;
     height: 70px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    
 
-    background-size: 60px auto;
-    background-image: url("../assets/images/WoodLight.png");
-    border-radius: 50px;
 }
 
-.textStyle {
-    font-weight: 100;
+.suggestionContainer {
+    align-self: flex-end;
+
+}
+
+.textStyle{
+    font-weight: 500;
     font-size: medium;
     font-size: large;
-    color: orange;
+    color: white;
     width: 50px;
     height: 50px;
     margin-left: 1px;
