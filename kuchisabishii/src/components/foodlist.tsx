@@ -15,12 +15,11 @@ export const FoodList = ({ category }: { category: string }) => {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid" id={category}>
         <CategoryBar category={category} />
-
-        <div className="row gy-1 m-0">
+        <div className="row row-cols-1 m-0 g-0">
           {food.map((food) => (
-            <div key={food._id} className="col-lg-3 col-sm-12 col-md-6">
+            <div key={food._id} className="col">
               <Foodcard food={food} />
             </div>
           ))}

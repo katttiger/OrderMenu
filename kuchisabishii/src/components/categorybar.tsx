@@ -1,20 +1,22 @@
-export const CategoryBar = ({category}:{category: string}) => {
+import styles from "./categorybar.module.css" 
+
+export const CategoryBar = ({ category }: { category: string }) => {
     return (
         <>
-            <nav className="navbar navbar-expand bg-body-tertiary" id={category}>
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">{category}</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <span data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i className="fas fa-bars" ></i>
-                                </span>
-                            </li>
-                        </ul>
+            <nav className={`${styles.category} navbar`} >
+                <div className="container-fluid d-flex justify-content-between w-100">
+                    <div className="w-25"></div>
+                    <div className="w-50 d-flex justify-content-center">
+                        <h4 className="my-0">{category}</h4>
+                    </div>
+                    <div className="w-25">
+                        <span
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                            className="d-flex justify-content-end pe-3"
+                        >
+                            <i className="fas fa-bars" ></i>
+                        </span>
                     </div>
                 </div>
             </nav>

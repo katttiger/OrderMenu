@@ -4,6 +4,7 @@
     background-size: 600px auto;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
     padding: 0;
 }
 
@@ -11,3 +12,5 @@
     color: white;
     padding:20px;
 }
+
+
