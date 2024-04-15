@@ -3,9 +3,8 @@ import styles from './navbar.module.css'
 export const Navbar = () => {
     
     return (
-        //Improve design
         <>
-            <div className={`NavBar d-flex justify-content-between text-dark ${styles.links}`}>
+            <div className={` d-flex justify-content-between text-dark ${styles.links}`}>
                 <NavLink to="/food" className={({ isActive }) => isActive ? styles.active : ""}>Food</NavLink >
                 <NavLink to="/sides" className={({ isActive }) => isActive ? styles.active : ""}>Sides</NavLink >
                 <NavLink to="/drinks" className={({ isActive }) => isActive ? styles.active : ""}>Cocktails</NavLink >

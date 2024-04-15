@@ -9,7 +9,7 @@ export const DrinkCard = ({ drink }: { drink: Drink }) => {
     <>
       <div className={styles.productCard} style={{ backgroundImage: `url(${drink.strDrinkThumb})` }} >
         <ProductCardHeader
-          title={drink.strDrink}
+          title={drink.strDrink}          
           price={drink.price}
         />
         <CartManager id={drink.idDrink} title={drink.strDrink} price={drink.price} />

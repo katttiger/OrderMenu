@@ -2,5 +2,9 @@
     background-image: url("../assets/images/WoodDark.png");
     text-align: center;
     color: whitesmoke;
+    /* position: sticky;
+    top: 0; */
+    z-index: 2;
+    width: 100%;
 }
 

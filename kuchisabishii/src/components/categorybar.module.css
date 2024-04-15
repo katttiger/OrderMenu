@@ -1,6 +1,6 @@
 .category {
     position: sticky;
-    top: 0;
+    top: 10%;
     z-index: 1;
     background-Image: url(../assets/images/WoodLight.png);
     color: whitesmoke;    
