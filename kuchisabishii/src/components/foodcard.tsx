@@ -16,14 +16,13 @@ export const Foodcard = ({ food }: { food: Food }) => {
           title={food.title}
           description={food.description}
           price={food.price}
-
         />
+
         <CartManager id={food._id} title={food.title} price={food.price} />
         <div style={{ visibility: isItemInCart ? "visible" : "hidden" }} className={styless.suggestionContainer}>
-        <DrinkSuggestions />
+          <DrinkSuggestions />
+        </div>
       </div>
-      </div>
-         
     </>
   );
 };

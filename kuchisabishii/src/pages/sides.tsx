@@ -5,10 +5,11 @@ export const Sides = () => {
 
     return (
         <>
-
-            <div >{foodCategories.map((c) => (
-                <FoodList key={c} category={c} />
-            ))}</div>
+            < div > {
+                foodCategories.map((c) => (
+                    <FoodList key={c} category={c} />
+                ))
+            }</div>
 
             <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
