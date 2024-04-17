@@ -1,18 +1,25 @@
 import styles from "./drinkSuggestions.module.css"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import {CartContext} from "../App"
 import { DrinkCard } from "./drinkcard";
 import { Link } from "react-router-dom";
 
-export const DrinkSuggestions = () => {
+interface DrinkSuggestionsProps {
+    foodId: string
+}
+
+export const DrinkSuggestions = ({foodId}: DrinkSuggestionsProps) => {
     const cocktailUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Beer`;
-
+    const {beverages, beveragesAlgorithm} = useContext(CartContext);
     const [drinks, setDrinks] = useState<Drinks>();
-
+    
+    const suggestedBeverageIds = beveragesAlgorithm[foodId] || [];
+    const suggestedBeverages = beverages.drinks.filter(beverage => suggestedBeverageIds.includes(beverage.idDrink));
+    
     useEffect(() => {
         fetch(cocktailUrl)
             .then((res) => res.json())
             .then((data) => setDrinks(data))
-
     }, []);
 
     const drinkSuggestion = drinks?.drinks.slice(0, 3);
@@ -20,7 +27,7 @@ export const DrinkSuggestions = () => {
         <>
             <div className={styles.suggestionBar}>
                 <div className={styles.textStyle}>Cocktail pairings</div>
-                {drinkSuggestion?.map((suggestion) => (
+                {/* {drinkSuggestion?.map((suggestion) => (
                     <div key={suggestion.idDrink}>
                         <button type="button" className={styles.suggestionButton} data-bs-toggle="modal" data-bs-target={`#${suggestion.idDrink}`}
                             data-bs-whatever={suggestion} style={{ backgroundImage: `url(${suggestion?.strDrinkThumb})` }}></button>
@@ -46,8 +53,14 @@ export const DrinkSuggestions = () => {
                             </div>
                         </div>
                     </div>
-
-                ))}
+                ))} */}
+                <div className={styles.testdiv}>
+                    {suggestedBeverages.map((drink, index) => (
+                        <div>
+                            <img key={index} src={drink.strDrinkThumb} style={{maxHeight: '5rem'}}/>
+                        </div>
+                        ))}
+                </div>
             </div>
         </>
     )

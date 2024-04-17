@@ -18,7 +18,7 @@ export const FoodList = ({ category }: { category: string }) => {
       <div className="container-fluid" id={category}>
         <CategoryBar category={category} />
         <div className="row row-cols-1 m-0 g-0">
-          {food.map((food) => (
+          {food.map((food, index) => (
             <div key={food._id} className="col">
               <Foodcard food={food} />
             </div>
