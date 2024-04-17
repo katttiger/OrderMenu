@@ -10,7 +10,7 @@ export const FoodList = ({ category }: { category: string }) => {
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setFood(data))
+      .then((data) => setFood(data));
   }, []);
 
   return (
@@ -18,7 +18,7 @@ export const FoodList = ({ category }: { category: string }) => {
       <div className="container-fluid" id={category}>
         <CategoryBar category={category} />
         <div className="row row-cols-1 m-0 g-0">
-          {food.map((food, index) => (
+          {food.map((food) => (
             <div key={food._id} className="col">
               <Foodcard food={food} />
             </div>
@@ -26,5 +26,5 @@ export const FoodList = ({ category }: { category: string }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
