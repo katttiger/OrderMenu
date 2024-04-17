@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect} from "react";
 import { DrinkCard } from "./drinkcard";
 import {CategoryBar} from "./categorybar";
 
@@ -18,9 +18,9 @@ export const DrinkList = ({ category }: { category: string }) => {
           <div className="container-fluid">
             <CategoryBar category={category} />
     
-            <div className="row gy-1 m-0">
+            <div className="row row-cols-1 gy-1 m-0 g-0">
                     {drinks?.drinks.slice(0, 5).map((drink) => (
-                        <div key={drink.idDrink} className="col-lg-3 col-sm-12 col-md-6">
+                        <div key={drink.idDrink} className="col">
                             <DrinkCard drink={drink} />
                         </div>
                     ))}

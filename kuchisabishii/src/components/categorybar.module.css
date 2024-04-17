@@ -1,19 +1,8 @@
-#bar {
-    background-image: url("../assets/images/WoodLight.png");
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 3rem;
-    color: tan;
-    margin-top: 0rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-bottom: 0rem;
-    width: 100%;
-    margin-right: 1rem;
-    margin-left: 1rem;
-}
-
-#navbarBrand {
-    color: tan;
+.category {
+    position: sticky;
+    top: 7em;
+    z-index: 1;
+    background-Image: url(../assets/images/WoodLight.png);
+    color: whitesmoke;    
+    height: 2.5em;;
 }

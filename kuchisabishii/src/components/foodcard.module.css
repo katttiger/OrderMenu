@@ -5,6 +5,7 @@
     background-size: 600px auto;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
     padding: 0;
 
 }
@@ -12,10 +13,4 @@
 .cardHeader {
     color: white;
     padding: 20px;
-}
-
-.drinkSuggestion {
-    display: flex;
-    justify-content: baseline;
-    align-items: baseline;
 }

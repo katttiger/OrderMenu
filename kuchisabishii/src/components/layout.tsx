@@ -8,7 +8,6 @@ export const Layout = () => {
             <div className="container-fluid">
                 <Header />
                 <Outlet />
-                <Sidebottom />
             </div>
         </>
     )
