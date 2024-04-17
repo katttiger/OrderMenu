@@ -10,7 +10,7 @@ export const FoodList = ({ category }: { category: string }) => {
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setFood(data))
+      .then((data) => setFood(data));
   }, []);
 
   return (
@@ -26,5 +26,5 @@ export const FoodList = ({ category }: { category: string }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
