@@ -9,6 +9,7 @@ import { DrinkSuggestions } from "./drinkSuggestions";
 export const Foodcard = ({ food }: { food: Food }) => {
   const { cart } = useContext(CartContext);
   const isItemInCart = cart.some((item) => item.id === food._id);
+
   return (
     <>
       <div className={styles.productCard} style={{ backgroundImage: `url(${food.imageUrl})` }} >
@@ -20,8 +21,7 @@ export const Foodcard = ({ food }: { food: Food }) => {
 
         <CartManager id={food._id} title={food.title} price={food.price} />
         <div style={{ visibility: isItemInCart ? "visible" : "hidden" }} className={styless.suggestionContainer}>
-          <DrinkSuggestions />
-
+          <DrinkSuggestions foodId={food._id}/>
         </div>
       </div>
     </>
