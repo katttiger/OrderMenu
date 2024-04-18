@@ -14,26 +14,15 @@ export const Cart = () => {
     setTotal(currentTotal);
   }, []);
 
-  // ta bort addToCart och removeFromCart
   const addToCarttest = (id: string, title: string, price: number) => {
-    // const isItemICart = cart.find((item) => item.id === id);
-    // if (isItemICart) {
-    //     isItemICart.quantity++;
-    //     isItemICart.totalItemPrice = (price * isItemICart.quantity);
-    // }
+
     addToCart(id, title, price);
     setTotal(total + price);
   };
 
   const removeFromCarttest = (id: string) => {
     let isItemInCart = cart.find((item) => item.id === id);
-    // if (isItemInCart) {
-    //     isItemInCart.quantity--;
-    //     isItemInCart.totalItemPrice = (isItemInCart.quantity * isItemInCart.singleItemPrice)
-    //     if (isItemInCart.quantity < 1) {
-    //         cart.splice(cart.indexOf(isItemInCart), 1);
-    //     }
-    // }
+
     removeFromCart(id);
     setTotal(total - isItemInCart?.singleItemPrice!);
   };
@@ -53,23 +42,15 @@ export const Cart = () => {
               <tr className={styles.tableRow} key={item.id}>
                 <td>
                   <button className="btn btn-danger" onClick={() => removeFromCarttest(item.id)}>
-                    <h4>-</h4>
-                  </button>
+                    <h4>-</h4></button>
                 </td>
-                <td>
-                  <h6>{item.quantity}</h6>
-                </td>
-                <td>
-                  <h6>{item.title}</h6>
-                </td>
-                <td>
-                  <h6>{item.totalItemPrice} SEK</h6>
-                </td>
+                <td><h6>{item.quantity}</h6></td>
+                <td><h6>{item.title}</h6></td>
+                <td><h6>{item.totalItemPrice} SEK</h6></td>
                 <td>
                   <button
                     className="btn btn-success"
-                    onClick={() => addToCarttest(item.id, item.title, item.singleItemPrice)}
-                  >
+                    onClick={() => addToCarttest(item.id, item.title, item.singleItemPrice)}>
                     <h4>+</h4>
                   </button>
                 </td>
@@ -78,7 +59,7 @@ export const Cart = () => {
           </tbody>
         </table>
       </div>
-
+      {/* Counter not working */}
       <div className={styles.cartFooter}>
         {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Your cart is empty.</h4>}
         <input type="text" placeholder="Table Code"></input>
