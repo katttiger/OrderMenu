@@ -1,6 +1,5 @@
 import { Navbar } from "./navbar"
 import styles from "./header.module.css";
-//import styles from "./components/header.module.css"
 
 export const Header = () => {
     return (
@@ -9,14 +8,14 @@ export const Header = () => {
                 <h1 className={styles.h1}>
                     Kuchisabishii
                 </h1>
+                {/* <h5>口寂しい  </h5> */}
                 <div className={styles.p}>
                     <i>
                         Asian fusion for your lonely mouth
                     </i>
                 </div>
-                <Navbar/>
+                <Navbar />
             </div>
-            
         </>
     )
 }

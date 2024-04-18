@@ -21,7 +21,7 @@ export const Foodcard = ({ food }: { food: Food }) => {
 
         <CartManager id={food._id} title={food.title} price={food.price} />
         <div style={{ visibility: isItemInCart ? "visible" : "hidden" }} className={styless.suggestionContainer}>
-          <DrinkSuggestions foodId={food._id}/>
+          <DrinkSuggestions foodId={food._id} foodCategory={food.categories[0]}/>
         </div>
       </div>
     </>

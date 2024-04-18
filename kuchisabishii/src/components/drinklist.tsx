@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { DrinkCard } from "./drinkcard";
 import { CategoryBar } from "./categorybar";
+
 
 export const DrinkList = ({ category }: { category: string }) => {
   const cocktailUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`;

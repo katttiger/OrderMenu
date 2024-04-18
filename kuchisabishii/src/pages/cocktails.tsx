@@ -1,7 +1,7 @@
 import { DrinkList } from "../components/drinklist"
-export const Cocktails = () => {
+export const Cocktails = ( {drinkCategories} : {drinkCategories: string[]} ) => {
 
-    const drinkCategories = ['Beer', 'Ordinary Drink', 'Soft Drink', 'Homemade Liqueur']
+    //const drinkCategories = ['Beer', 'Ordinary Drink', 'Soft Drink', 'Homemade Liqueur']
 
     return (
         <>
