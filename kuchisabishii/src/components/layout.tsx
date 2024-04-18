@@ -12,7 +12,7 @@ export const Layout = () => {
     useEffect(() => {
         let tempcart = 0;
         cart.cart.forEach((ci) => tempcart += ci.quantity)
-        setCartTotal(cart.cart.length)
+        setCartTotal(tempcart)
     }, [cart.cart]);
 
     return (
