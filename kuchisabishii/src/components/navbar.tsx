@@ -7,7 +7,6 @@ export const Navbar = () => {
             <NavLink to="/food" className={({ isActive }) => isActive ? styles.active : ""}>Food</NavLink >
             <NavLink to="/sides" className={({ isActive }) => isActive ? styles.active : ""}>Sides</NavLink >
             <NavLink to="/drinks" className={({ isActive }) => isActive ? styles.active : ""}>Cocktails</NavLink >
-            <NavLink to="/cart" className={({ isActive }) => isActive ? styles.active : ""}>Cart</NavLink >
         </div>
     )
 }

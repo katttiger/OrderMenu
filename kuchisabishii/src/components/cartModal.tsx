@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { CartContext } from "../App";
 import { useContext, useEffect, useState } from "react";
 import styles from "./cart.module.css"
