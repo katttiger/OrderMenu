@@ -9,7 +9,15 @@ export const Layout = () => {
   const cart = useContext(CartContext);
   const [cartTotal, setCartTotal] = useState<number>(0);
 
-  useEffect(() => setCartTotal(cart.cart.length), [cart.cart]);
+  useEffect(() => {
+    let tempCart = 0;
+
+    cart.cart.forEach((ci) => {
+      tempCart += ci.quantity;
+    });
+
+    setCartTotal(tempCart);
+  }, [cart.cart]);
 
   return (
     <>
