@@ -8,7 +8,6 @@ import style from "./layout.module.css";
 export const Layout = () => {
   const cart = useContext(CartContext);
   const [cartTotal, setCartTotal] = useState<number>(0);
-  let newTotal: number = 0;
 
   useEffect(() => setCartTotal(cart.cart.length), [cart.cart]);
 

@@ -1,4 +1,4 @@
-import styles from "./categorybar.module.css" 
+import styles from "./categorybar.module.css"
 
 export const CategoryBar = ({ category }: { category: string }) => {
     return (
@@ -13,8 +13,7 @@ export const CategoryBar = ({ category }: { category: string }) => {
                         <span
                             data-bs-toggle="modal"
                             data-bs-target="#exampleModal"
-                            className="d-flex justify-content-end pe-3"
-                        >
+                            className="d-flex justify-content-end pe-3">
                             <i className="fas fa-bars" ></i>
                         </span>
                     </div>
