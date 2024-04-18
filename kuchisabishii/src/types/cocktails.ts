@@ -3,7 +3,7 @@ type Drink = {
     strDrink:string;
     strDrinkThumb: string;
     idDrink: string;
-    price: number;
+    price: number;   
 }
 
 //Get many drinks

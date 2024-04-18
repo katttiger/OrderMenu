@@ -10,12 +10,37 @@ import { Cart } from "./pages/cart";
 import { Payment } from "./pages/payment";
 
 type DrinksAlgorithm = {
-  [key: string]: string[];
+  [key: string]: string;
 };
+
+export type DrinksAndCategory = {
+  drinks: Drink[];
+  drinkCategory: string;
+}
+
 type SuggestionContext = {
-  drinks: Drinks;
+  drinksAndCategory: DrinksAndCategory[];
   drinksAlgorithm: DrinksAlgorithm;
 };
+
+const drinkCategories = [
+  "Beer",
+  "Ordinary Drink",
+  "Soft Drink",
+  "Homemade Liqueur",
+];
+
+const drinksAlgorithm = {
+  "Seafood": "Beer",
+  "Chicken": "Ordinary Drink",
+  "Vegetarian": "Soft Drink",
+  "Beef": "Homemade Liqueur",
+};
+
+export const SuggestionContext = createContext<SuggestionContext>({
+  drinksAndCategory: [],
+  drinksAlgorithm: {},
+});
 
 export const CartContext = createContext<{
   cart: CartItem[];
@@ -24,93 +49,35 @@ export const CartContext = createContext<{
   clearCart: () => void;
 }>({
   cart: [],
-  addToCart: () => {},
-  removeFromCart: () => {},
-  clearCart: () => {},
-});
-
-export const SuggestionContext = createContext<SuggestionContext>({
-  drinks: { drinks: [] },
-  drinksAlgorithm: {},
+  addToCart: () => { },
+  removeFromCart: () => { },
+  clearCart: () => { },
 });
 
 function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
-  const [drinks, setDrinks] = useState<Drinks>({ drinks: [] });
+  const [drinksAndCategory, setDrinksAndCategory] = useState<DrinksAndCategory[]>([]);
   const isMounted = useRef(false);
-  // const beveragesUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink";
   const beveragesUrl =
     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=";
-  const drinkCategories = [
-    "Beer",
-    "Ordinary Drink",
-    "Soft Drink",
-    "Homemade Liqueur",
-  ];
 
-  //Cecilia testar
   useEffect(() => {
-    //Beer
-    //Ordinary
-    //Soft
-    //Homemade Liquer
-    if (!isMounted.current){
-    drinkCategories.map((category) => {
-      fetch(beveragesUrl + category)
-        .then((response) => response.json())
-        .then((data: Drinks) => {
-          console.log("the api call is made");
-          // const newDrinks = [...drinks.drinks, ...data.drinks.splice(0, 5)];
-          // const newDrinks = data.drinks.splice(0, 5);
-          setDrinks((prevDrinks) => ({
-            drinks: [...prevDrinks.drinks, ...data.drinks.splice(0, 5)],
-          }));
-        });
-    });
-    
-  }}, []);
+    if (!isMounted.current) {
+      drinkCategories.map((category) => {
+        fetch(beveragesUrl + category)
+          .then((response) => response.json())
+          .then((data: Drinks) => {
+            const newDrinksAndCategory: DrinksAndCategory = {
+              drinks: data.drinks.splice(0, 20),
+              drinkCategory: category
+            };
+            setDrinksAndCategory((prevDrinksAndCategory) => [...prevDrinksAndCategory, newDrinksAndCategory]);
+          })
+      });
+    }
+  }, []);
 
-  console.log(drinks);
-
-  // const drinksAlgorithm = {
-  //   // Key: [Value1, Value2]
-  //   //"Foodid": ["drinkid1", "drinkid2",...]
-  //   "6602cd1c29f983c33cc71618": ["15300", "14598", "17105", "13940"],
-  //   "6602cd5229f983c33cc71f7a": ["14598", "17105", "13581", "13581"],
-  //   "6602cd5d29f983c33cc721a8": ["14598", "3581", "13940", "17222"],
-  //   "6602cd6e29f983c33cc72256": ["17105", "15300", "17222", "13581"],
-  //   "6602cd8229f983c33cc724a8": ["13940", "17105", "17222", "13581"],
-  //   "6602cd9329f983c33cc72539": ["15300", "17105", "17222", "13581"],
-  //   "6602cd9e29f983c33cc72570": ["17105", "13940", "15300", "13581"],
-  //   "6602cdaa29f983c33cc725c7": ["14598", "13940", "17105", "13581"],
-  //   "6602cdcb29f983c33cc72719": ["17105", "13940", "14598", "13581"],
-  // };
-  // const drinksAlgorithm = {
-  //   // Key: [Value1, Value2]
-  //   //"Foodid": ["drinkid1", "drinkid2",...]
-  //   "6602cd1c29f983c33cc71618": ["13581", "14598", "17833"],
-  //   "6602cd5229f983c33cc71f7a": ["17105", "13940", "17135"],
-  //   "6602cd5d29f983c33cc721a8": ["13128", "13497", "17108"],
-  //   "6602cd6e29f983c33cc72256": ["17015", "15086", "14482"],
-  //   "6602cd8229f983c33cc724a8": ["17135", "17108", "15933"],
-  //   "6602cd9329f983c33cc72539": ["14482", "15933", "17044"],
-  //   "6602cd9e29f983c33cc72570": ["15200", "17831", "12820"],
-  //   "6602cdaa29f983c33cc725c7": ["12800", "12802", "14482"],
-  //   "6602cdcb29f983c33cc72719": ["14888", "13128"],
-  // };
-  const drinksAlgorithm = {
-    // Key: [Value1, Value2]
-    //"Foodid": ["drinkid1", "drinkid2",...]
-    "6602cd1c29f983c33cc71618": ["13581", "15423", "12796"],
-    "6602cd5229f983c33cc71f7a": ["13581", "14598", "12796"],
-    "6602cd5d29f983c33cc721a8": ["13581", "12790", "12794"],
-    "6602cd6e29f983c33cc72256": ["13581", "15423", "12792"],
-    "6602cd8229f983c33cc724a8": ["13581", "15300", "12794"],
-    "6602cd9329f983c33cc72539": ["13581", "12790", "14282"],
-    "6602cd9e29f983c33cc72570": ["13581", "14598", "15423"],
-    "6602cdaa29f983c33cc725c7": ["13581", "12796", "14282"],
-    "6602cdcb29f983c33cc72719": ["15423", "14598", "15300"],
-  };
+  console.log(drinksAndCategory);
 
   const addToCart = (id: string, title: string, price: number) => {
     const isItemICart = cart.find((item) => item.id === id);
@@ -149,7 +116,7 @@ function App() {
 
   return (
     <>
-      <SuggestionContext.Provider value={{ drinks, drinksAlgorithm }}>
+      <SuggestionContext.Provider value={{ drinksAndCategory, drinksAlgorithm }}>
         <CartContext.Provider
           value={{ cart, addToCart, removeFromCart, clearCart }}
         >
@@ -159,7 +126,7 @@ function App() {
                 <Route index element={<Food />}></Route>
                 <Route path="/food" element={<Food />}></Route>
                 <Route path="/sides" element={<Sides />}></Route>
-                <Route path="/drinks" element={<Cocktails />}></Route>
+                <Route path="/drinks" element={<Cocktails drinkCategories={drinkCategories} />}></Route>
                 <Route path="/cart" element={<Cart />}></Route>
                 <Route path="/payment" element={<Payment />}></Route>
                 {/* WildCard Route AKA alla andra route går mot denna*/}
