@@ -5,8 +5,7 @@ import styles from "./cart.module.css";
 //import { CartItem } from "../types/cart";
 
 export const Cart = () => {
-  const { cart, clearCart, addToCart, removeFromCart } =
-    useContext(CartContext);
+  const { cart, clearCart, addToCart, removeFromCart } = useContext(CartContext);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -42,27 +41,18 @@ export const Cart = () => {
   return (
     <>
       <div className={styles.MenuContainer}>
-        <div
-          className={`${styles.Menu}`}
-          style={{ textDecoration: "underline" }}
-        >
+        <div className={`${styles.Menu}`} style={{ textDecoration: "underline" }}>
           Order
         </div>
         <div className={`${styles.Menu}`}>Pay</div>
       </div>
-      <div
-        className="container-fluid"
-        style={{ msOverflowY: "scroll", maxHeight: "60vh" }}
-      >
+      <div className="container-fluid" style={{ msOverflowY: "scroll", maxHeight: "60vh" }}>
         <table className="table">
           <tbody>
             {cart.map((item) => (
               <tr className={styles.tableRow} key={item.id}>
                 <td>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => removeFromCarttest(item.id)}
-                  >
+                  <button className="btn btn-danger" onClick={() => removeFromCarttest(item.id)}>
                     <h4>-</h4>
                   </button>
                 </td>
@@ -78,9 +68,7 @@ export const Cart = () => {
                 <td>
                   <button
                     className="btn btn-success"
-                    onClick={() =>
-                      addToCarttest(item.id, item.title, item.singleItemPrice)
-                    }
+                    onClick={() => addToCarttest(item.id, item.title, item.singleItemPrice)}
                   >
                     <h4>+</h4>
                   </button>
@@ -92,11 +80,7 @@ export const Cart = () => {
       </div>
 
       <div className={styles.cartFooter}>
-        {cart.length > 0 ? (
-          <h4>Total: {total}:-</h4>
-        ) : (
-          <h4>Your cart is empty.</h4>
-        )}
+        {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Your cart is empty.</h4>}
         <input type="text" placeholder="Table Code"></input>
         <button className="btn btn-secondary" onClick={() => clearCart()}>
           Send Order
