@@ -1,8 +1,8 @@
 .category {
     position: sticky;
-    top: 7em;
+    top: 6.8em;
     z-index: 1;
     background-Image: url(../assets/images/WoodLight.png);
-    color: whitesmoke;    
-    height: 2.5em;;
+    color: whitesmoke;
+    height: 2.5em;
 }
