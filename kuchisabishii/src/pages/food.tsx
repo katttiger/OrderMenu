@@ -10,7 +10,7 @@ export const Food = () => {
     {/* bildspel 
         Objective: Hitta nya bilder
         */}
-    <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel" style={{ marginTop: "7em" }}>
+    <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel" data-bs-pause={false} data-bs-interval={3000} style={{ marginTop: "7em" }}>
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src={pic1} className="d-block w-100 h-20" alt="..." />
