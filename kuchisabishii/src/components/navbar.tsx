@@ -9,19 +9,19 @@ export const Navbar = () => {
         to="/food"
         className={({ isActive }) => (isActive ? styles.active : "")}
       >
-        Mains
+        <h6>Mains</h6>
       </NavLink>
       <NavLink
         to="/sides"
         className={({ isActive }) => (isActive ? styles.active : "")}
       >
-        Sides
+        <h6>Sides</h6>
       </NavLink>
       <NavLink
         to="/drinks"
         className={({ isActive }) => (isActive ? styles.active : "")}
       >
-        Cocktails
+        <h6>Cocktails</h6>
       </NavLink>
     </div>
   );

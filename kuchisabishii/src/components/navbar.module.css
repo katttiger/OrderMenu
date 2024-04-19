@@ -1,12 +1,18 @@
 a {
     text-decoration: none;
     color: rgb(255, 255, 255);
+    font-size: large;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .links {
     color: white !important;
     border: 1px solid tan;
     width: 100%;
+    height: 2.5em;
     position: absolute;
     bottom: 0;
 }
