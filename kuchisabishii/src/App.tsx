@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Cocktails } from "./pages/cocktails";
 import { Sides } from "./pages/sides";
 import { Food } from "./pages/food";
@@ -123,7 +123,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Layout />}>
-                <Route index element={<Food />}></Route>
+                <Route index element={<Navigate to="/food" />}></Route>
                 <Route path="/food" element={<Food />}></Route>
                 <Route path="/sides" element={<Sides />}></Route>
                 <Route path="/drinks" element={<Cocktails drinkCategories={drinkCategories} />}></Route>
