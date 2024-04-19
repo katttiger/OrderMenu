@@ -4,7 +4,7 @@ import pic2 from "../assets/images/pic-2.jpg"
 import pic3 from "../assets/images/pic-3.jpg"
 
 export const Food = () => {
-  const foodCategories = ['Seafood', 'Chicken', 'Vegetarian', 'Beef']
+  const foodCategories = ['Vegetarian', 'Seafood', 'Chicken',  'Beef']
 
   return (<>
     {/* bildspel 
