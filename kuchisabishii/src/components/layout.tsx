@@ -40,7 +40,6 @@ export const Layout = () => {
                                     btn-badge text-white border position-absolute">{cartTotal}</span>
                             </button>
                         </div>  
-                        <p>{cartTotal}</p>
                     </button>
                 )}
             </div>
