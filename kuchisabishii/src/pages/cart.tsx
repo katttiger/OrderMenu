@@ -44,9 +44,11 @@ export const Cart = () => {
         <div className={`${styles.Menu}`} style={{ textDecoration: "underline" }}>
           Order
         </div>
-        <div className={`${styles.Menu}`}>Pay</div>
       </div>
-      <div className="container-fluid" style={{ msOverflowY: "scroll", maxHeight: "60vh" }}>
+      <div
+        className="container-fluid"
+        style={{ borderBottom: "none", msOverflowY: "scroll", maxHeight: "60vh" }}
+      >
         <table className="table">
           <tbody>
             {cart.map((item) => (
@@ -56,14 +58,18 @@ export const Cart = () => {
                     <h4>-</h4>
                   </button>
                 </td>
-                <td>
-                  <h6>{item.quantity}</h6>
-                </td>
-                <td>
-                  <h6>{item.title}</h6>
-                </td>
-                <td>
-                  <h6>{item.totalItemPrice} SEK</h6>
+                <td className="d-flex justify-content-around w-100">
+                  <div className="d-flex justify-content-center" style={{ width: "20%" }}>
+                    <h6>{item.quantity}</h6>
+                  </div>
+
+                  <div style={{ width: "50%" }}>
+                    <h6>{item.title}</h6>
+                  </div>
+
+                  <div style={{ width: "30%" }}>
+                    <h6>{item.totalItemPrice} SEK</h6>
+                  </div>
                 </td>
                 <td>
                   <button
