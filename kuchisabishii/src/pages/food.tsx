@@ -36,8 +36,10 @@ export const Food = () => {
     >
       <div className="modal-dialog modal-fullscreen">
         <div className="modal-content">
-          <div className="modal-header d-flex alignt-items-center">
-            <h1 className="modal-title text-white" id="exampleModalLabel" style={{ marginLeft: '25%' }}>
+          <div className="modal-header d-flex alignt-items-center justify-content-between">
+            {/* Tom div för justify between */}
+            <div></div>
+            <h1 className="modal-title text-white m-0" id="exampleModalLabel">
               Choose a category
             </h1>
             <button
@@ -45,11 +47,12 @@ export const Food = () => {
               className="btn-close btn-close-white"
               data-bs-dismiss="modal"
               aria-label="Close"
+              style={{transform: 'scale(1.5)', margin: '0', height: '2em', width: '2em'}}
             ></button>
           </div>
           <div
             className="modal-body d-flex justify-content-center align-items-center"
-            style={{ backgroundColor: "transparent" }}
+            style={{ backgroundColor: "transparent", marginRight: '1em' }}
           >
             <ul>
               {foodCategories.map((c) => (

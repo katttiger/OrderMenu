@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../App";
 import { Cart } from "../pages/cart";
 import style from "./layout.module.css";
+import { Footer } from "./footer";
 
 export const Layout = () => {
     const cart = useContext(CartContext);
@@ -20,6 +21,7 @@ export const Layout = () => {
             <div className="container-fluid">
                 <Header />
                 <Outlet />
+                <Footer/>
                 {cartTotal > 0 && (
                     <button
                         className={style.cartButton}
@@ -53,6 +55,7 @@ export const Layout = () => {
                     ></button>
                 </div>
                 <Cart />
+                
             </div>
         </>
     );
