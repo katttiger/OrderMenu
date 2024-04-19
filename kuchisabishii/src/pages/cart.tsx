@@ -12,7 +12,7 @@ export const Cart = () => {
     let currentTotal = 0;
     cart.forEach((item) => (currentTotal += item.totalItemPrice));
     setTotal(currentTotal);
-  }, []);
+  }, [cart]);
 
   // ta bort addToCart och removeFromCart
   const addToCarttest = (id: string, title: string, price: number) => {
