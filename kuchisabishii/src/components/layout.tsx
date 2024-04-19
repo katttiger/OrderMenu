@@ -28,7 +28,16 @@ export const Layout = () => {
                         data-bs-target="#offcanvasBottom"
                         aria-controls="offcanvasBottom"
                     >
+                        
                         <i className="bi-alarm-clock"></i>
+                          <div className="d-flex">
+                            <span>Cart: </span>
+                            <button className="btn btn-info py-2 mr-2 postition-relative">
+                                <i className="fa fa-shopping-cart text-white"></i>
+                                <span className="badge btn-badge bg-success rounded-100
+                                    btn-badge text-white border position-absolute">{cartTotal}</span>
+                            </button>
+                        </div>  
                         <p>{cartTotal}</p>
                     </button>
                 )}

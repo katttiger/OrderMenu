@@ -15,6 +15,7 @@ export const FoodList = ({ category }: { category: string }) => {
 
   return (
     <>
+
       <div className="container-fluid" id={category} style={{ scrollMarginTop: "7em" }}>
         <CategoryBar category={category} />
         <div className="row row-cols-1 m-0 g-0">

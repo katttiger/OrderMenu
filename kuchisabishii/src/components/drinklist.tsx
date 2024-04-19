@@ -19,7 +19,7 @@ export const DrinkList = ({ category }: { category: string }) => {
       <div className="container-fluid">
         <CategoryBar category={category} />
 
-        <div className="row row-cols-1 gy-1 m-0 g-0">
+        <div className="row row-cols-1 m-0 g-0">
           {drinks?.drinks.slice(0, 5).map((drink) => (
             <div key={drink.idDrink} className="col">
               <DrinkCard drink={drink} />
