@@ -51,10 +51,10 @@ export const Food = () => {
               <div className="w-25"></div>
               <div className="w-50 d-flex justify-content-center">
                 <h1
-                  className="modal-title text-white m-0 w-50"
+                  className="modal-title text-white m-0"
                   id="exampleModalLabel"
                 >
-                  Choose a category
+                  Categories
                 </h1>
               </div>
               <div className="w-25 d-flex justify-content-end">

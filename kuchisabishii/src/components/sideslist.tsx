@@ -18,7 +18,7 @@ export const SidesList = () => {
       <div className="container-fluid" id="sides" style={{ marginTop: "7em" }}>
         <div className={`row row-cols-1 m-0 g-0 ${styles.backgroundImage}`}>
           {side.map((side) => (
-            <div key={side._id} className="col mb-2">
+            <div key={side._id} className="col">
               <Sidecard side={side} />
             </div>
           ))}

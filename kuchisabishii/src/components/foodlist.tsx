@@ -17,12 +17,12 @@ export const FoodList = ({ category }: { category: string }) => {
   return (
     <>
       <div
-        className="container-fluid d-flex justify-content-center flex-column align-items-center"
+        className={`container-fluid d-flex justify-content-center flex-column align-items-center ${styles.backgroundImage}`}
         id={category}
         style={{ scrollMarginTop: "7em" }}
       >
         <CategoryBar category={category} />
-        <div className={`row row-cols-1 m-0 g-0 ${styles.backgroundImage}`}>
+        <div className={`row row-cols-1 m-0 g-0 `}>
           {food.map((food) => (
             <div key={food._id} className="col">
               <Foodcard food={food} />

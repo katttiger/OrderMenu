@@ -5,11 +5,12 @@ import { CartContext } from "../App";
 import { Cart } from "../pages/cart";
 import style from "./layout.module.css";
 import { Footer } from "./footer";
+import { Cartbar } from "./cartbar";
 
 export const Layout = () => {
   const cart = useContext(CartContext);
   const [cartTotal, setCartTotal] = useState<number>(0);
-  //Fix
+
   useEffect(() => {
     let tempcart = 0;
     cart.cart.forEach((ci) => (tempcart += ci.quantity));
@@ -22,29 +23,7 @@ export const Layout = () => {
         <Header />
         <Outlet />
         <Footer />
-        {cartTotal > 0 && (
-          <button
-            className={style.cartButton}
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasBottom"
-            aria-controls="offcanvasBottom"
-          >
-            <div className="d-flex justify-content-between align-items-center">
-              <button className="btn my-1  postition-relative">
-                <i className="fa fa-shopping-cart text-white"></i>
-                <span
-                  className="badge btn-badge rounded-100 mt-1 text-white position-absolute"
-                >
-                  {cartTotal}
-                </span>
-              </button>
-
-              <span>Cart</span>
-              <i className="fa fa-solid fa-chevron-up"></i>
-            </div>
-          </button>
-        )}
+        <Cartbar cartTotal={cartTotal}/>
       </div>
 
       <div
@@ -54,7 +33,7 @@ export const Layout = () => {
         aria-labelledby="offcanvasBottomLabel"
         style={{ height: "100vh" }}
       >
-        <div className="offcanvas-header">
+        <div className={`offcanvas-header ${style.backgroundImage}`}>
           <h5 className="offcanvas-title" id="offcanvasBottomLabel">
             Cart
           </h5>

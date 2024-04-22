@@ -17,14 +17,15 @@ export const DrinkList = ({ category }: { category: string }) => {
   return (
     <>
       <div
-        className="container-fluid"
-        style={{ backgroundImage: "url(./assets/images/WoodLight.png)",scrollMarginTop: "7em" }}
+        className={`container-fluid d-flex justify-content-center flex-column align-items-center ${styles.backgroundImage}`}
+        style={{ scrollMarginTop: "7em" }}
+        id={category}
       >
         <CategoryBar category={category} />
 
         <div className={`row row-cols-1 m-0 g-0 ${styles.backgroundImage}`}>
           {drinks?.drinks.slice(0, 5).map((drink) => (
-            <div key={drink.idDrink} className="col mb-2">
+            <div key={drink.idDrink} className="col">
               <DrinkCard drink={drink} />
             </div>
           ))}

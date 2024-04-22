@@ -9,6 +9,7 @@
   margin-bottom: -6px;
   text-align: center;
   background-image: url(../assets/images/WoodLight.png);
+  overflow: hidden;
 }
 
 .backgroundImage {
