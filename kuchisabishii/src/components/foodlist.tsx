@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Foodcard } from "./foodcard";
 import { CategoryBar } from "./categorybar";
+import styles from "./layout.module.css";
 
 export const FoodList = ({ category }: { category: string }) => {
   let url = `https://iths-2024-recept-grupp9-40k2zx.reky.se/categories/${category}/recipes`;
@@ -15,12 +16,11 @@ export const FoodList = ({ category }: { category: string }) => {
 
   return (
     <>
-
       <div className="container-fluid" id={category} style={{ scrollMarginTop: "7em" }}>
         <CategoryBar category={category} />
-        <div className="row row-cols-1 m-0 g-0">
+        <div className={`row row-cols-1 m-0 g-0 ${styles.backgroundImage}`}>
           {food.map((food) => (
-            <div key={food._id} className="col">
+            <div key={food._id} className="col mb-2">
               <Foodcard food={food} />
             </div>
           ))}
