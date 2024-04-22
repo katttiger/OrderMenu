@@ -7,6 +7,7 @@ export const Navbar = () => {
     >
       <NavLink
         to="/food"
+        href={'#FoodList'}
         className={({ isActive }) => (isActive ? styles.active : "")}
       >
         <h6>Mains</h6>

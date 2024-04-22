@@ -18,7 +18,7 @@ export const DrinkList = ({ category }: { category: string }) => {
     <>
       <div
         className="container-fluid"
-        style={{ backgroundImage: "url(./assets/images/WoodLight.png)" }}
+        style={{ backgroundImage: "url(./assets/images/WoodLight.png)",scrollMarginTop: "7em" }}
       >
         <CategoryBar category={category} />
 

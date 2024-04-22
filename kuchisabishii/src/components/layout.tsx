@@ -18,7 +18,7 @@ export const Layout = () => {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid" style={{ width: "100.1%" }}>
         <Header />
         <Outlet />
         <Footer />
@@ -30,17 +30,18 @@ export const Layout = () => {
             data-bs-target="#offcanvasBottom"
             aria-controls="offcanvasBottom"
           >
-            <div className="d-flex">
-              <span>Cart: </span>
-              <button className="btn btn-info py-2 mr-2 postition-relative">
+            <div className="d-flex justify-content-between align-items-center">
+              <button className="btn my-1  postition-relative">
                 <i className="fa fa-shopping-cart text-white"></i>
                 <span
-                  className="badge btn-badge bg-success rounded-100
-                                    btn-badge text-white border position-absolute"
+                  className="badge btn-badge rounded-100 mt-1 text-white position-absolute"
                 >
                   {cartTotal}
                 </span>
               </button>
+
+              <span>Cart</span>
+              <i className="fa fa-solid fa-chevron-up"></i>
             </div>
           </button>
         )}
