@@ -4,7 +4,7 @@
     height: 35%;
     padding: 1em;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -24,9 +24,8 @@
 }
 
 .textStyle {
-    font-weight: 500;
+    font-weight: 600;
     font-size: medium;
-    font-size: large;
     color: white;
     width: 70px;
     height: 70px;
@@ -42,6 +41,7 @@
     padding: 0 1rem 0 1rem;
     margin-left: 1rem;
 }
-    .testdiv img {
-        border-radius: 20px;
-    }
+
+.testdiv img {
+    border-radius: 20px;
+}

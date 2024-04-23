@@ -1,12 +1,13 @@
-import styles from "./footer.module.css"
 
-export const Sidebottom = () => {
+import styles from "./footer.module.css";
+export const Footer = () => {
+
     return (
         <>
-            <div className={styles.bottom}>
-                <div>
-                    <p>©Kuchisabishii</p>
-                </div>
+            <div
+                className={styles.footer}
+            >
+
             </div>
         </>
     )
