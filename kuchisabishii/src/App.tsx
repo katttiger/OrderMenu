@@ -77,8 +77,6 @@ function App() {
     }
   }, []);
 
-  console.log(drinksAndCategory);
-
   const addToCart = (id: string, title: string, price: number) => {
     const isItemICart = cart.find((item) => item.id === id);
     if (isItemICart) {
