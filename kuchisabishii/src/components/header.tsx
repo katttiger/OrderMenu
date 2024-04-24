@@ -1,26 +1,34 @@
-import { Navbar } from "./navbar"
+import { Navbar } from "./navbar";
 import styles from "./header.module.css";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    return (
-        <>
-            <div className={styles.Header}>
+  const handleHeaderClick = () => {
+    if (location.pathname !== "/food") {
+      navigate("/food#carousel");
+    } else {
+      const section = document.getElementById("carousel");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
-                {/*Put kanji in header*/}
-                {/* <h5>口寂しい  </h5> */}
-                {/* Fix onClick => navigate to top of main page */}
-
-                <div className={styles.p}>
-                    <h1>
-                        Kuchisabishii
-                    </h1>
-                    <i>
+  return (
+    <>
+      <div className={styles.Header}>
+        <div className={styles.p}>
+          <h1 onClick={handleHeaderClick}>Kuchisabishii</h1>
+          <h5>口寂しい </h5>
+          {/* <i>
                         Asian fusion for your lonely mouth
-                    </i>
-                </div>
-                <Navbar />
-            </div >
-        </>
-    )
-}
+                    </i> */}
+        </div>
+        <Navbar />
+      </div>
+    </>
+  );
+};
