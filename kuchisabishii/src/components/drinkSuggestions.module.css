@@ -1,6 +1,6 @@
 .suggestionBar {
     color: white;
-    background-image: linear-gradient(to top, black 5%, transparent 99%);
+    background-image: linear-gradient(to top, black 60%, transparent 100%);
     height: 35%;
     padding: 1em;
     display: flex;
@@ -14,6 +14,8 @@
     background-size: 100% auto;
     background-repeat: no-repeat;
     border-radius: 20px;
+    border-color: whitesmoke;
+
 }
 
 .suggestionContainer {

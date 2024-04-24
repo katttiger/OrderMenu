@@ -13,7 +13,7 @@ export const CategoryBar = ({ category }: { category: string }) => {
             <span
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
-              className="d-flex justify-content-end pe-3"
+              className="d-flex justify-content-end pe-4"
             >
               <i className="fas fa-bars"></i>
             </span>
