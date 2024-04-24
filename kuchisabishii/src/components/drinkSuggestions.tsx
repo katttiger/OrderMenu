@@ -42,9 +42,10 @@ export const DrinkSuggestions = ({ foodId, foodCategory }: { foodId: string, foo
                                 <div className="modal-content">
                                     <div className="modal-body">
                                         <div className="d-flex justify-content-end">
-                                            <button
+                                            <button    
+                                                style={{ fontSize: "1.5em", marginBottom: "0.5em"}}                                   
                                                 type="button"
-                                                className="btn-close btn-close-white"
+                                                className={`btn-close btn-close-white ${styles.xButtonImage}`}
                                                 data-bs-dismiss="modal"
                                                 aria-label="Close"
                                             ></button>

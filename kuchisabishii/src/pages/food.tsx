@@ -4,6 +4,7 @@ import pic2 from "../assets/images/pic-2.jpg";
 import pic3 from "../assets/images/pic-3.jpg";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import styles from "../components/drinkSuggestions.module.css";
 
 export const Food = () => {
   const foodCategories = ["Vegetarian", "Seafood", "Chicken", "Beef"];
@@ -79,7 +80,6 @@ export const Food = () => {
         <div className="modal-dialog modal-fullscreen">
           <div className="modal-content">
             <div className="modal-header d-flex alignt-items-center justify-content-between">
-              {/* Tom div för justify between */}
               <div className="w-25"></div>
               <div className="w-50 d-flex justify-content-center">
                 <h1
@@ -92,7 +92,7 @@ export const Food = () => {
               <div className="w-25 d-flex justify-content-end">
                 <button
                   type="button"
-                  className="btn-close btn-close-white"
+                  className={`btn-close btn-close-white ${styles.xButtonImage}`}
                   data-bs-dismiss="modal"
                   aria-label="Close"
                   style={{

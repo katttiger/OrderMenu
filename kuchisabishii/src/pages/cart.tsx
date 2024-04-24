@@ -91,7 +91,12 @@ export const Cart = () => {
           placeholder="Table Code"
           value={tableCode}
         ></input>
-        <button className={cart.length > 0? "btn text-black font-weight-bold" : "btn btn-light text-white"} onClick={() => clearCart()}>
+        <button
+          className={
+            cart.length > 0 ? "btn text-black font-weight-bold" : "btn btn-light text-white"
+          }
+          onClick={() => clearCart()}
+        >
           <p>Send Order</p>
         </button>
         {/* <h4>Payment</h4> */}

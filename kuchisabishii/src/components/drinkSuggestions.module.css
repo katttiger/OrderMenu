@@ -34,6 +34,10 @@
     padding: 10px;
 }
 
+.xButtonImage {
+    background-image: url(../assets/images/XBTN.png);
+  }
+
 /* .testdiv {
     border-radius: 20px;
     gap: 1rem;
