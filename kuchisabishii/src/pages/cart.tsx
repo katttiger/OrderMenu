@@ -88,9 +88,9 @@ export const Cart = () => {
         ) : (
           <h4>Thank you for purchasing!</h4>
         )}
-        <input type="number" min={1} max={9999} maxlength="4" placeholder="Table Code"></input>
+        <input type="number" min={1} max={9999} maxLength={4} placeholder="Table Code"></input>
         <button className="btn btn-secondary" onClick={() => clearCart()}>
-          Send Order
+          <p className="text-dark">Send Order</p>
         </button>
         {/* <h4>Payment</h4> */}
       </div>
