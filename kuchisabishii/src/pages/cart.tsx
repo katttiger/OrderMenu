@@ -86,7 +86,7 @@ export const Cart = () => {
         {cart.length > 0 ? (
           <h4>Total: {total}:-</h4>
         ) : (
-          <h4>Your cart is empty.</h4>
+          <h4>Thank you for purchasing!</h4>
         )}
         <input type="text" placeholder="Table Code"></input>
         <button className="btn btn-secondary" onClick={() => clearCart()}>
