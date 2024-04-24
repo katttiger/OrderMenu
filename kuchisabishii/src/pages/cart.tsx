@@ -5,6 +5,14 @@ import styles from "./cart.module.css";
 export const Cart = () => {
   const { cart, clearCart, addToCart, removeFromCart } = useContext(CartContext);
   const [total, setTotal] = useState(0);
+  const [tableCode, setTableCode] = useState("");
+
+  const handleChange = (event: any) => {
+    const newValue = event.target.value.replace(/\D/g, "");
+    const truncatedValue = newValue.slice(0, 4);
+    const finalValue = Math.min(Math.max(parseInt(truncatedValue, 10), 1), 9999);
+    setTableCode(finalValue.toString());
+  };
 
   useEffect(() => {
     let currentTotal = 0;
@@ -75,6 +83,16 @@ export const Cart = () => {
       <div className={styles.cartFooter}>
         {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchasing!</h4>}
         <input type="number" min={1} max={9999} maxLength={4} placeholder="Table Code"></input>
+        {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchasing!</h4>}
+        <input
+          onChange={handleChange}
+          type="number"
+          min={1}
+          max={9999}
+          maxLength={4}
+          placeholder="Table Code"
+          value={tableCode}
+        ></input>
         <button className="btn btn-secondary" onClick={() => clearCart()}>
           <p className="text-dark">Send Order</p>
         </button>
