@@ -40,7 +40,7 @@ export const Cart = () => {
               <tr className={styles.tableRow} key={item.id}>
                 <td className="m-0 ps-4">
                   <button className="btn btn-danger" onClick={() => removeFromCarttest(item.id)}>
-                    <h4>-</h4>
+                    <span className={styles.buttonText}>-</span>
                   </button>
                 </td>
                 <td className="d-flex justify-content-around w-100">
@@ -63,7 +63,7 @@ export const Cart = () => {
                     className="btn btn-success"
                     onClick={() => addToCarttest(item.id, item.title, item.singleItemPrice)}
                   >
-                    <h4>+</h4>
+                    <span className={styles.buttonText}>+</span>
                   </button>
                 </td>
               </tr>
@@ -73,11 +73,7 @@ export const Cart = () => {
       </div>
 
       <div className={styles.cartFooter}>
-        {cart.length > 0 ? (
-          <h4>Total: {total}:-</h4>
-        ) : (
-          <h4>Thank you for purchasing!</h4>
-        )}
+        {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchasing!</h4>}
         <input type="number" min={1} max={9999} maxLength={4} placeholder="Table Code"></input>
         <button className="btn btn-secondary" onClick={() => clearCart()}>
           <p className="text-dark">Send Order</p>
