@@ -68,7 +68,7 @@ function App() {
           .then((response) => response.json())
           .then((data: Drinks) => {
             const newDrinksAndCategory: DrinksAndCategory = {
-              drinks: data.drinks.splice(0, 20),
+              drinks: data.drinks.splice(1, 6),
               drinkCategory: category
             };
             setDrinksAndCategory((prevDrinksAndCategory) => [...prevDrinksAndCategory, newDrinksAndCategory]);
