@@ -5,6 +5,14 @@ import styles from "./cart.module.css";
 export const Cart = () => {
   const { cart, clearCart, addToCart, removeFromCart } = useContext(CartContext);
   const [total, setTotal] = useState(0);
+  const [tableCode, setTableCode] = useState("");
+
+  const handleChange = (event: any) => {
+    const newValue = event.target.value.replace(/\D/g, "");
+    const truncatedValue = newValue.slice(0, 4);
+    const finalValue = Math.min(Math.max(parseInt(truncatedValue, 10), 1), 9999);
+    setTableCode(finalValue.toString());
+  };
 
   useEffect(() => {
     let currentTotal = 0;
@@ -40,7 +48,7 @@ export const Cart = () => {
               <tr className={styles.tableRow} key={item.id}>
                 <td className="m-0 ps-4">
                   <button className="btn btn-danger" onClick={() => removeFromCarttest(item.id)}>
-                    <h4>-</h4>
+                    <span className={styles.buttonText}>-</span>
                   </button>
                 </td>
                 <td className="d-flex justify-content-around w-100">
@@ -63,7 +71,7 @@ export const Cart = () => {
                     className="btn btn-success"
                     onClick={() => addToCarttest(item.id, item.title, item.singleItemPrice)}
                   >
-                    <h4>+</h4>
+                    <span className={styles.buttonText}>+</span>
                   </button>
                 </td>
               </tr>
@@ -73,12 +81,16 @@ export const Cart = () => {
       </div>
 
       <div className={styles.cartFooter}>
-        {cart.length > 0 ? (
-          <h4>Total: {total}:-</h4>
-        ) : (
-          <h4>Thank you for purchasing!</h4>
-        )}
-        <input type="number" min={1} max={9999} maxLength={4} placeholder="Table Code"></input>
+        {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchasing!</h4>}
+        <input
+          onChange={handleChange}
+          type="number"
+          min={1}
+          max={9999}
+          maxLength={4}
+          placeholder="Table Code"
+          value={tableCode}
+        ></input>
         <button className={cart.length > 0? "btn text-black font-weight-bold" : "btn btn-light text-white"} onClick={() => clearCart()}>
           <p>Send Order</p>
         </button>
