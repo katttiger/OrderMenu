@@ -39,7 +39,8 @@ export const Layout = () => {
           </h5>
           <button
             type="button"
-            className="btn-close btn-close-white"
+            style={{fontSize: "1.5em"}}
+            className={`btn-close btn-close-white ${style.xButtonImage}`}
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>
