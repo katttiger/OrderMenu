@@ -73,10 +73,14 @@ export const Cart = () => {
       </div>
 
       <div className={styles.cartFooter}>
-        {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchasing!</h4>}
-        <input type="text" placeholder="Table Code"></input>
+        {cart.length > 0 ? (
+          <h4>Total: {total}:-</h4>
+        ) : (
+          <h4>Thank you for purchasing!</h4>
+        )}
+        <input type="number" min={1} max={9999} maxLength={4} placeholder="Table Code"></input>
         <button className="btn btn-secondary" onClick={() => clearCart()}>
-          Send Order
+          <p className="text-dark">Send Order</p>
         </button>
         {/* <h4>Payment</h4> */}
       </div>
