@@ -82,8 +82,6 @@ export const Cart = () => {
 
       <div className={styles.cartFooter}>
         {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchasing!</h4>}
-        <input type="number" min={1} max={9999} maxLength={4} placeholder="Table Code"></input>
-        {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchasing!</h4>}
         <input
           onChange={handleChange}
           type="number"
