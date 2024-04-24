@@ -58,13 +58,13 @@ function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [drinksAndCategory, setDrinksAndCategory] = useState<DrinksAndCategory[]>([]);
   const isMounted = useRef(false);
-  const beveragesUrl =
+  const drinksUrl =
     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=";
 
   useEffect(() => {
     if (!isMounted.current) {
       drinkCategories.map((category) => {
-        fetch(beveragesUrl + category)
+        fetch(drinksUrl + category)
           .then((response) => response.json())
           .then((data: Drinks) => {
             const newDrinksAndCategory: DrinksAndCategory = {
