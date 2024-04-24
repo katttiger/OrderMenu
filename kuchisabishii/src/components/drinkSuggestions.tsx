@@ -49,8 +49,8 @@ export const DrinkSuggestions = ({ foodId, foodCategory }: { foodId: string, foo
                                                 aria-label="Close"
                                             ></button>
                                         </div>
-                                        <div>
-                                            {drinkSuggestion && <DrinkCard drink={suggestion} />}{" "}
+                                        <div >
+                                            {drinkSuggestion && <DrinkCard drink={suggestion} />}
                                         </div>
                                     </div>
                                     <div className="modal-footer d-flex justify-content-between">

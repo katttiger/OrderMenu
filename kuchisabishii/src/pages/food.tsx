@@ -8,26 +8,23 @@ export const Food = () => {
 
   return (
     <>
-      {/* bildspel 
-        Objective: Hitta nya bilder
-        */}
       <div
         id="carouselExampleSlidesOnly"
         className="carousel slide"
         data-bs-ride="carousel"
         data-bs-pause={false}
-        data-bs-interval={2000}
+        data-bs-interval={4000}
         style={{ marginTop: "7em" }}
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={pic1} className="d-block w-100 h-20" alt="..." />
+            <img src={pic1} className="d-block w-100 h-20" alt="Various Asian dishes on a restaurant table" />
           </div>
           <div className="carousel-item">
-            <img src={pic2} className="d-block w-100 h-20" alt="..." />
+            <img src={pic2} className="d-block w-100 h-20" alt="People enjoying a meal and socializing at a restaurant" />
           </div>
           <div className="carousel-item">
-            <img src={pic3} className="d-block w-100 h-20" alt="..." />
+            <img src={pic3} className="d-block w-100 h-20" alt="A person eating asian food" />
           </div>
         </div>
       </div>

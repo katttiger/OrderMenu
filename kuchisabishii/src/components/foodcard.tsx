@@ -12,7 +12,7 @@ export const Foodcard = ({ food }: { food: Food }) => {
 
   return (
     <>
-      <div className={styles.productCard} style={{ backgroundImage: `url(${food.imageUrl})` }} >
+      <div className={styles.productCard} style={{ backgroundImage: `url(${food.imageUrl})`, width: "100vw"}} >
         <ProductCardHeader
           title={food.title}
           description={food.description}
