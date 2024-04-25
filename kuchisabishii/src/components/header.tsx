@@ -22,10 +22,10 @@ export const Header = () => {
       <div className={styles.Header}>
         <div className={styles.p}>
           <h1 onClick={handleHeaderClick}>Kuchisabishii</h1>
-          <h5>口寂しい </h5>
-          {/* <i>
+          {/* <h5>口寂しい </h5> */}
+          <i>
                         Asian fusion for your lonely mouth
-                    </i> */}
+                    </i>
         </div>
         <Navbar />
       </div>
