@@ -36,17 +36,17 @@ export const Food = () => {
   return (
     <>
       <div id="carousel">
-        <Carousel 
-          className={styles.Carousel} 
-          showThumbs={false} 
-          showIndicators={false} 
-          showArrows={false} 
-          autoPlay 
-          infiniteLoop 
+        <Carousel
+          className={styles.Carousel}
+          showThumbs={false}
+          showIndicators={false}
+          showArrows={false}
+          autoPlay
+          infiniteLoop
           interval={4000}>
-            {carouselImages.map((image, index) => (
-              <img src={image} key={index}/>
-            ))}
+          {carouselImages.map((image, index) => (
+            <img src={image} key={index} />
+          ))}
         </Carousel>
       </div>
       {/* navigate here on link */}
@@ -54,7 +54,7 @@ export const Food = () => {
       {foodCategories.map((c) => (
         <FoodList key={c} category={c} />
       ))}
-     <CategorylistModal categories={foodCategories}/>
+      <CategorylistModal categories={foodCategories} />
     </>
   );
 };
