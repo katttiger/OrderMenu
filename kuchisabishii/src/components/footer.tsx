@@ -7,7 +7,6 @@ export const Footer = () => {
             <div
                 className={styles.footer}
             >
-
             </div>
         </>
     )

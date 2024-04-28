@@ -24,7 +24,7 @@ export const DrinkList = ({ category }: { category: string }) => {
         <CategoryBar category={category} />
 
         <div className={`row row-cols-1 m-0 g-0 ${styles.backgroundImage}`}>
-          {drinks?.drinks.slice(0, 5).map((drink) => (
+          {drinks?.drinks.slice(1, 6).map((drink) => (
             <div key={drink.idDrink} className="col">
               <DrinkCard drink={drink} />
             </div>

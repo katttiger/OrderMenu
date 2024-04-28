@@ -6,7 +6,7 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   /*Warning: Dubbel hämtning av drycker.*/
   <React.StrictMode>
-    <App style={{ backgroundImage: `url(../assets/images/WoodDark.png)` }}/>
+    <App />
   </React.StrictMode>
 
 )

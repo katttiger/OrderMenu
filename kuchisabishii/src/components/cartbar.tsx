@@ -1,26 +1,28 @@
-import style from "./layout.module.css";
+import styles from "./cartbar.module.css";
 
 export const Cartbar = ({ cartTotal }: { cartTotal: number }) => {
   return (
     <>
       {cartTotal > 0 && (
         <button
-          className={style.cartButton}
+          className={styles.cartButton}
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasBottom"
           aria-controls="offcanvasBottom"
         >
-          <div className="d-flex justify-content-between align-items-center">
-            <button className="btn my-1  postition-relative">
-              <i className="fa fa-shopping-cart text-white"></i>
-              <span className="badge btn-badge rounded-100 mt-1 text-white position-absolute">
+          <div className="d-flex justify-content-between align-items-baseline px-3">
+            <div className="position-relative">
+              <span className={styles.cartTotal}>
                 {cartTotal}
               </span>
-            </button>
+              <i className="fa fa-shopping-cart fs-5"></i>
+            </div>
 
-            <span className="fs-2">Cart</span>
-            <i className="fa fa-solid fa-chevron-up"></i>
+            <h5>Cart</h5>
+            <div>
+              <i className="fa fa-solid fa-chevron-up fs-5"></i>
+            </div>
           </div>
         </button>
       )}

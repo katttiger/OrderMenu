@@ -1,6 +1,6 @@
 .suggestionBar {
     color: white;
-    background-image: linear-gradient(to top, black 5%, transparent 99%);
+    background-image: linear-gradient(to top, black 60%, transparent 100%);
     height: 35%;
     padding: 1em;
     display: flex;
@@ -14,6 +14,8 @@
     background-size: 100% auto;
     background-repeat: no-repeat;
     border-radius: 20px;
+    border-color: whitesmoke;
+
 }
 
 .suggestionContainer {
@@ -32,7 +34,11 @@
     padding: 10px;
 }
 
-.testdiv {
+.xButtonImage {
+    background-image: url(../assets/images/XBTN.png);
+}
+
+/* .testdiv {
     border-radius: 20px;
     gap: 1rem;
     overflow-y: hidden;
@@ -41,7 +47,6 @@
     padding: 0 1rem 0 1rem;
     margin-left: 1rem;
 }
-
-.testdiv img {
-    border-radius: 20px;
-}
+    .testdiv img {
+        border-radius: 20px;
+    } */

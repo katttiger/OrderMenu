@@ -23,7 +23,7 @@ export const Layout = () => {
         <Header />
         <Outlet />
         <Footer />
-        <Cartbar cartTotal={cartTotal}/>
+        <Cartbar cartTotal={cartTotal} />
       </div>
 
       <div
@@ -34,12 +34,13 @@ export const Layout = () => {
         style={{ height: "100vh" }}
       >
         <div className={`offcanvas-header ${style.backgroundImage}`}>
-          <h5 className="offcanvas-title" id="offcanvasBottomLabel">
+          <h5 className="offcanvas-title text-white" id="offcanvasBottomLabel">
             Cart
           </h5>
           <button
             type="button"
-            className="btn-close"
+            style={{fontSize: "1.5em"}}
+            className={`btn-close btn-close-white ${style.xButtonImage}`}
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>

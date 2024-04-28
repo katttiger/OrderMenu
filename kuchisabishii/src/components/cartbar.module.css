@@ -1,0 +1,22 @@
+.cartButton {
+    color: white;
+    width: 100.05%;
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border: none;
+    margin-bottom: -6px;
+    padding-bottom: -6px;
+    background-image: url(../assets/images/WoodDark.png);
+    overflow: hidden;
+    height: 2.8em;
+}
+
+.cartTotal {
+    font-size: 1em;
+    font-weight: 500;
+    position: absolute;
+    left: 1.8em;
+    top: -.6em;
+}
