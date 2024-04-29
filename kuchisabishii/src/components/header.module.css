@@ -1,7 +1,7 @@
 .Header {
-    background-image: url("../assets/images/WoodDark.png");
+    background-color:var(--quartenary-color);
     text-align: center;
-    color: whitesmoke;
+    color:var(--secondary-color);
     position: fixed;
     top: 0;
     z-index: 2;
@@ -9,10 +9,17 @@
     height: 8em;
     margin-bottom: 0.4em;
 }
+
 h1 {
     margin-top: 0.2em;
 }
+
 .p {
     height: 6em;
     margin-bottom: 0.4em;
+}
+
+.Logo{
+    width:75%;
+    max-width: 275px;
 }
