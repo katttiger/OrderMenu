@@ -19,15 +19,15 @@ export const Header = () => {
 
   return (
     <>
-      <div className={styles.Header}>
-        <img className={styles.Logo} src="src/assets/images/KuchisabishiiLogo.png" onClick={handleHeaderClick}/>
-        {/* <div className={styles.p}>
-          <h2 onClick={handleHeaderClick}>Kuchisabishii 口寂しい</h2>
+      <div className={styles.Header} >
+        
+        <div className={styles.p} onClick={handleHeaderClick}>
+          <h2> 口寂しい</h2>
           
-          <p><i>
-          When you're not hungry, but you eat because your mouth is lonely
-          </i></p>
-        </div> */}
+          <p>
+            k u c h i s a b i s h i i
+          </p>
+        </div>
         <Navbar />
       </div>
     </>

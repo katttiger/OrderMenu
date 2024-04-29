@@ -1,5 +1,5 @@
 .cartButton {
-    color: white;
+    color: var(--primary-color);
     width: 100.05%;
     z-index: 1;
     position: fixed;
@@ -8,7 +8,7 @@
     border: none;
     margin-bottom: -6px;
     padding-bottom: -6px;
-    background-image: url(../assets/images/WoodDark.png);
+    background-color: rgb(219, 218, 218);
     overflow: hidden;
     height: 2.8em;
 }

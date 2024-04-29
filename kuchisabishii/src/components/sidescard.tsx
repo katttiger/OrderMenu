@@ -6,6 +6,7 @@ export const Sidecard = ({ side }: { side: Food }) => {
   return (
     <>
       <div className={styles.productCard} style={{ backgroundImage: `url(${side.imageUrl})` }} >
+      <div className={styles.colorOverlay}></div>
         <ProductCardHeader
           title={side.title}
           description={side.description}

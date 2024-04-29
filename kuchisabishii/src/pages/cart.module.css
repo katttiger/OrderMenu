@@ -1,11 +1,11 @@
 .MenuContainer {
   height: 3em;
   width: 100%;
-  background-image: url("../assets/images/WoodLight.png");
+  background-color: var(--primary-color);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: whitesmoke;
+  color: var(--secondary-color);
 }
 
 .tableRow {
@@ -44,7 +44,7 @@ input::placeholder {
   font-weight: 600;
 }
 .cartFooter {
-  background-image: url("../assets/images/WoodLight.png");
+  background-color: var(--primary-color);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -53,7 +53,7 @@ input::placeholder {
   left: 0;
   width: 100%;
   height: 20%;
-  color: white;
+  color: var(--secondary-color);
   padding-top: 0.5em;
 }
 
@@ -62,14 +62,15 @@ input::placeholder {
   border: none;
   border-radius: 10px 10px 0 0;
 
-  background-color: rgba(255, 255, 255, 0.425);
+  background-color: rgba(206, 206, 206, 0.63);
   width: 95%;
   height: 25%;
 }
 
 .cartFooter button {
   width: 95%;
-  background-color: lightgray;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
   margin: 0rem 0 0.7rem 0;
   border-radius: 0 0 10px 10px;
   height: 25%;

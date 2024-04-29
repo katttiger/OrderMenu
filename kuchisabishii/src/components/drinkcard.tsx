@@ -8,6 +8,7 @@ export const DrinkCard = ({ drink }: { drink: Drink }) => {
   return (
     <>
       <div className={styles.productCard} style={{ backgroundImage: `url(${drink.strDrinkThumb})` }} >
+      <div className={styles.colorOverlay}></div>
         <ProductCardHeader
           title={drink.strDrink}          
           price={drink.price}

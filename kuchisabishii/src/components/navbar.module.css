@@ -5,7 +5,6 @@ a {
   align-items: center;
   justify-content: center;
   display: flex;
-  border-radius: 15px 15px 0px 0px;
 }
 
 .links {
@@ -18,14 +17,12 @@ a {
 
 .links > a {
   width: 33.3%;
-  background-color:var(--quartenary-color);
   text-align: center;
 }
 
 .active {
-  color: var(--quartenary-color) !important;
-  transition: background-image color 0.6s ease-in-out;
-  background-color:var(--secondary-color) !important;
+  color: var(--secondary-color) !important;
+  border-bottom:3px solid var(--secondary-color) !important;
 }
 
 .links h6 {

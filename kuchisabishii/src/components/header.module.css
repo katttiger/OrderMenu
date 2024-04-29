@@ -1,5 +1,8 @@
 .Header {
-    background-color:var(--quartenary-color);
+    background-image: url(../assets/images/HeaderBGImage.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
     color:var(--secondary-color);
     position: fixed;
@@ -15,11 +18,8 @@ h1 {
 }
 
 .p {
-    height: 6em;
+    height: 8em;
     margin-bottom: 0.4em;
-}
-
-.Logo{
-    width:75%;
-    max-width: 275px;
+    letter-spacing: 0.15cm;
+    padding-top: 0.9em;
 }
