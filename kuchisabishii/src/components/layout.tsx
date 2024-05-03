@@ -6,6 +6,7 @@ import { Cart } from "../pages/cart";
 import style from "./layout.module.css";
 import { Footer } from "./footer";
 import { Cartbar } from "./cartbar";
+import { Chatbot } from "./chatbot";
 
 export const Layout = () => {
   const cart = useContext(CartContext);
@@ -20,6 +21,7 @@ export const Layout = () => {
   return (
     <>
       <div className="container-fluid" style={{ width: "100.1%" }}>
+        <Chatbot />
         <Header />
         <Outlet />
         <Footer />
@@ -39,7 +41,7 @@ export const Layout = () => {
           </h5>
           <button
             type="button"
-            style={{fontSize: "1.5em"}}
+            style={{ fontSize: "1.5em" }}
             className={`btn-close ${style.xButtonImage}`}
             data-bs-dismiss="offcanvas"
             aria-label="Close"

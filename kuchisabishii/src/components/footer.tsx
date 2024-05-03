@@ -1,12 +1,11 @@
-
 import styles from "./footer.module.css";
 export const Footer = () => {
 
-    return(
+    return (
         <>
             <div
-            className={styles.footer}
-            >      
+                className={styles.footer}
+            >
             </div>
         </>
     )
