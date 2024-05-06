@@ -22,13 +22,13 @@ export const Chatbot = () => {
         .catch((err) => console.log(err));
     }, [chatHistory]);
   };
+
   return (
     <>
       <div
         className={styles.chatbot}
         data-bs-toggle="offcanvas"
-        data-bs-target="#chatBot"
-      >
+        data-bs-target="#chatBot">
         <i className="fas fa-comment-dots"></i>
       </div>
 
@@ -36,17 +36,18 @@ export const Chatbot = () => {
         className="offcanvas offcanvas-start"
         tabIndex={-1}
         id="chatBot"
-        aria-labelledby="offcanvasExampleLabel"
-      >
+        aria-labelledby="offcanvasExampleLabel">
+
         <div className="offcanvas-header">
           <h5 id="offcanvasExampleLabel">Bichiibot</h5>
           <button
             type="button"
             className="btn-close"
-            data-bs-dismiss="canvas"
+            data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>
         </div>
+
         <div className={styles.offcanvasChatbody}>
           <p className={styles.chatmessage}>
             Hello! What can i do for you kind person Hello! What can i do for
@@ -66,6 +67,7 @@ export const Chatbot = () => {
             <p className={styles.chatmessage}>{chatmessage}</p>
           ))}
         </div>
+
         <div className="offcanvas-footer">
           <input
             type="text"
