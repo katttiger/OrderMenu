@@ -42,7 +42,7 @@ export const Cart = () => {
         className="container-fluid"
         style={{ borderBottom: "none", overflowY: "scroll", maxHeight: "60vh" }}
       >
-        <table className="table" style={{}}>
+        <table className="table">
           <tbody>
             {cart.map((item) => (
               <tr className={styles.tableRow} key={item.id}>

@@ -1,0 +1,70 @@
+.chatbot {
+    position: fixed;
+    top: 90%;
+    right: 5%;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+i{
+    align-self: center;
+    justify-content: center;
+}
+.offcanvasfooter{
+    margin-top: 2em;
+}
+
+.offcanvasChatbody {
+    background-image: url("./src/assets/images/ChatBotBackground.png") !important;
+    overflow-y: scroll;
+    margin: 1em;
+}
+
+.chatbotheader {
+    height: 8em;
+}
+
+input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    border-radius: 5px;
+    border: 0.1em solid black;
+    height: 2em;
+    margin-left: .5em;
+}
+
+.sendmessage {
+    position: absolute;
+    bottom:0;
+    right:0;
+    height: 2em;
+    margin-right: .5em;
+}
+
+/* AI-message */
+.system {
+    padding: 10px;
+    max-width: 70%;
+    border-radius: 10px 10px 10px 10px;
+    color: white !important;
+    background-color: rgb(77, 163, 77);
+    text-align: start;
+    margin-right: auto;
+}
+
+
+/* Usermessage */
+.user {
+    padding: 10px;
+    width: 70%;
+    border-radius: 10px 10px 10px 10px;
+    color: white !important;
+    background-color: rgb(98, 180, 207);
+    text-align: start;
+    margin-left: auto;
+}
+

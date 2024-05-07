@@ -9,7 +9,7 @@ export const Cocktails = ({
 
   return (
     <>
-      <div style={{ marginTop: "7em" }}>
+      <div style={{ marginTop: "8em" }}>
       {drinkCategories.map((c) => (
                 <DrinkList key={c} category={c} />
             ))}

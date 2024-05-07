@@ -1,7 +1,11 @@
 .backgroundImage {
-  background-image: url(../assets/images/WoodLight.png);
+  background-color: var(--primary-color);
 }
 
 .xButtonImage {
   background-image: url(../assets/images/XBTN.png);
+}
+.cartbutton{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }

@@ -12,18 +12,22 @@ export const Foodcard = ({ food }: { food: Food }) => {
 
   return (
     <>
-      <div className={styles.productCard} style={{ backgroundImage: `url(${food.imageUrl})`, width: "100vw"}} >
+
+      <div className={styles.productCard} style={{ backgroundImage: `url(${food.imageUrl})`, width: "100vw" }} >
+        <div className={styles.colorOverlay}></div>
         <ProductCardHeader
           title={food.title}
           description={food.description}
           price={food.price}
-        />
 
+
+        />
         <CartManager id={food._id} title={food.title} price={food.price} />
         <div style={{ visibility: isItemInCart ? "visible" : "hidden" }} className={styless.suggestionContainer}>
-          <DrinkSuggestions foodId={food._id} foodCategory={food.categories[0]}/>
+          <DrinkSuggestions foodId={food._id} foodCategory={food.categories[0]} />
         </div>
       </div>
+
     </>
   );
 };

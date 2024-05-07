@@ -1,12 +1,13 @@
 .category {
-  width: 100%;
+  width: 99%;
   position: sticky;
-  top: 7.8em;
+  top: 8.1em;
   z-index: 1;
-  background-image: url(../assets/images/WoodLight.png);
-  color: whitesmoke;
+  background-color: rgb(219, 218, 218);
+  color: var(--primary-color);
   height: 2.5em;
   box-shadow: 0px 5px 10px 5px black;
+  border-radius: 5px;
 }
 i{
   transform: scale(1.4);

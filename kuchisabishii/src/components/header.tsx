@@ -19,13 +19,14 @@ export const Header = () => {
 
   return (
     <>
-      <div className={styles.Header}>
-        <div className={styles.p}>
-          <h1 onClick={handleHeaderClick}>Kuchisabishii</h1>
-          {/* <h5>口寂しい </h5> */}
-          <i>
-                        Asian fusion for your lonely mouth
-                    </i>
+      <div className={styles.Header} >
+        
+        <div className={styles.p} onClick={handleHeaderClick}>
+          <h2> 口寂しい</h2>
+          
+          <p>
+            k u c h i s a b i s h i i
+          </p>
         </div>
         <Navbar />
       </div>
