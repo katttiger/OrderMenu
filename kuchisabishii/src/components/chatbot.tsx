@@ -9,6 +9,7 @@ type ChatMessage = {
 export const Chatbot = () => {
   const [message, setMessage] = useState<string>("");
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const inputMessage = document.getElementById("inputMessage");
   const chatBodyRef = useRef<HTMLDivElement>(null)
@@ -25,6 +26,7 @@ export const Chatbot = () => {
       message: message,
       author: "user",
     };
+    setErrorMessage("");
     setChatHistory((chat) => [...chat, chatMessage]);
     sendQuestionToChatApi()
     setMessage("");
@@ -47,7 +49,8 @@ export const Chatbot = () => {
         ])
       )
       .then(() => console.log(chatHistory))
-      .catch((err) => console.log(err))
+      // .catch((err) => console.log(err))
+      .catch((err) => setErrorMessage("Failed to connect to AI-Chatbot."))
   };
 
 
@@ -88,6 +91,7 @@ export const Chatbot = () => {
               </p>
             )
           )}
+          <p>{errorMessage}</p>
         </div>
         <div className={styles.offcanvasfooter}>
           <input
