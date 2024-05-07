@@ -7,7 +7,5 @@ export const DrinkSuggestion = (drinkSuggestion : Drink) =>{
             <button>Go back</button>
             <button>Drink Menu</button>
         </>
-
     )
-
 }

@@ -15,7 +15,6 @@ export const DrinkCard = ({ drink }: { drink: Drink }) => {
         />
         <CartManager id={drink.idDrink} title={drink.strDrink} price={drink.price} />
       </div>
-
     </>
   )
 }

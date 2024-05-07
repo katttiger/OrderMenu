@@ -1,4 +1,3 @@
-//get one drink
 type Drink = {
     strDrink:string;
     strDrinkThumb: string;
@@ -6,8 +5,7 @@ type Drink = {
     price: number;   
 }
 
-//Get many drinks
 type Drinks = {
     drinks:Drink[];
 }
-//Next/Later=> cocktailmeny + suggestion
+

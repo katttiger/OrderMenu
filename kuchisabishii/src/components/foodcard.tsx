@@ -12,7 +12,6 @@ export const Foodcard = ({ food }: { food: Food }) => {
 
   return (
     <>
-    
       <div className={styles.productCard} style={{ backgroundImage: `url(${food.imageUrl})`, width: "100vw"}} >
       <div className={styles.colorOverlay}></div>
           <ProductCardHeader
@@ -27,7 +26,6 @@ export const Foodcard = ({ food }: { food: Food }) => {
             <DrinkSuggestions foodId={food._id} foodCategory={food.categories[0]}/>
           </div>
         </div>
-    
     </>
   );
 };

@@ -16,6 +16,5 @@ export const Sidecard = ({ side }: { side: Food }) => {
         <CartManager id={side._id} title={side.title} price={side.price} />
       </div>
     </>
-    
   );
 };

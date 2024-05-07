@@ -19,7 +19,7 @@ export const Chatbot = () => {
       chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
     }
   },
-    [chatHistory]);
+  [chatHistory]);
 
   const sendquestion = () => {
     let chatMessage: ChatMessage = {
@@ -49,10 +49,8 @@ export const Chatbot = () => {
         ])
       )
       .then(() => console.log(chatHistory))
-      // .catch((err) => console.log(err))
-      .catch((err) => setErrorMessage("Failed to connect to AI-Chatbot."))
+      .catch(() => setErrorMessage("Failed to connect to AI-Chatbot."))
   };
-
 
   return (
     <>

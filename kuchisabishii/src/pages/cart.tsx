@@ -19,11 +19,10 @@ export const Cart = () => {
   const handlePayment = () => {
     clearCart();
     setPayed(true)
-    //Display "Thank you for your purchase"?
   };
 
   useEffect(() => {
-    setPayed(isItemsInCart);
+    setPayed(isItemsInCart && isPayed);
     let currentTotal = 0;
     cart.forEach((item) => (currentTotal += item.totalItemPrice));
     setTotal(currentTotal);
@@ -42,9 +41,6 @@ export const Cart = () => {
 
   return (
     <>
-      {/* Ternery expression: If payed!=true => Show order
-      else => display thank you
-      */}
       <div className={styles.MenuContainer}>
         <div className={`${styles.Menu}`} style={{ textDecoration: "underline" }}>
           Order
@@ -93,7 +89,7 @@ export const Cart = () => {
       </div>
       {/* To develop: "Your order will arrive shortly" + "timer" */}
       <div className={styles.cartFooter}>
-        {cart.length > 0 && !isPayed ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchase!</h4>}
+        {cart.length === 0 && isPayed ? <h4>Thank you for purchase!</h4> : <h4>Total: {total}:-</h4> }
         <input
           onChange={handleChange}
           type="number"
@@ -105,7 +101,6 @@ export const Cart = () => {
         ></input>
 
         <button
-          // disabled={!isPayed}
           className={
             cart.length > 0 && !isPayed ? "btn text-black font-weight-bold" : "btn btn-light text-white disabled"
           } onClick={() => handlePayment()}
