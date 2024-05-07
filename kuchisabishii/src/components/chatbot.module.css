@@ -2,18 +2,31 @@
     position: fixed;
     top: 90%;
     right: 5%;
-    z-index: 1;
+    font-size: 1.5em;
+    z-index: 2;
     align-items: center;
     justify-content: center;
     color: white;
 }
 
-i{
+i {
     align-self: center;
     justify-content: center;
+    text-shadow: grey 2px 2px 2px;
 }
-.offcanvasfooter{
+
+.offcanvasChat {
+    border-radius: 10px;
+}
+
+.offcanvasChatheader {
+    background-color: var(--fifth-color);
+    color: var(--secondary-color);
+}
+
+.offcanvasfooter {
     margin-top: 2em;
+    display: flex;
 }
 
 .offcanvasChatbody {
@@ -22,27 +35,32 @@ i{
     margin: 1em;
 }
 
-.chatbotheader {
-    height: 8em;
-}
 
 input {
     position: absolute;
-    bottom: 0;
+    bottom: 0.5em;
     left: 0;
-    width: 80%;
+    width: 78%;
     border-radius: 5px;
-    border: 0.1em solid black;
-    height: 2em;
+    border: 0.1em solid lightgrey;
+    height: 2.2em;
     margin-left: .5em;
 }
 
 .sendmessage {
     position: absolute;
-    bottom:0;
+    bottom:0.5em;
     right:0;
-    height: 2em;
+    height: 2.2em;
+    width: 15%;
     margin-right: .5em;
+    color: white;
+    background-color: var(--tertiary-color);
+}
+
+.sendmessage:hover{
+    background-color: var(--quartenary-color);
+    color: white;
 }
 
 /* AI-message */

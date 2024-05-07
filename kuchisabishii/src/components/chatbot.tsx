@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./chatbot.module.css";
 
 type ChatMessage = {
@@ -10,16 +10,25 @@ export const Chatbot = () => {
   const [message, setMessage] = useState<string>("");
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
 
+  const inputMessage = document.getElementById("inputMessage");
+  const chatBodyRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    }
+  },
+    [chatHistory]);
+
   const sendquestion = () => {
     let chatMessage: ChatMessage = {
       message: message,
       author: "user",
     };
     setChatHistory((chat) => [...chat, chatMessage]);
-    console.log(message);
-    sendQuestionToChatApi();
+    sendQuestionToChatApi()
     setMessage("");
-    
+    inputMessage?.focus()
   };
 
   const sendQuestionToChatApi = async () => {
@@ -38,60 +47,58 @@ export const Chatbot = () => {
         ])
       )
       .then(() => console.log(chatHistory))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
   };
 
 
   return (
     <>
       <i
-        className={`fas fa-regular fa-comments fa-2xl ${styles.chatbot}`}
-        
+        className={`fas fa-regular fa-comments ${styles.chatbot}`}
         data-bs-toggle="offcanvas"
         data-bs-target="#chatBot"
       ></i>
 
       <div
-        className="offcanvas offcanvas-start"
+        className={`offcanvas offcanvas-end ${styles.offcanvasChat}`}
         tabIndex={-1}
         id="chatBot"
         aria-labelledby="offcanvasExampleLabel">
 
-        <div className="offcanvas-header">
+        <div className={`offcanvas-header ${styles.offcanvasChatheader}`}>
           <h5 id="offcanvasExampleLabel">Bichiibot</h5>
           <button
             type="button"
             className="btn-close"
             data-bs-dismiss="offcanvas"
-            data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>
         </div>
 
-        <div className={styles.offcanvasChatbody}>
+        <div className={styles.offcanvasChatbody} ref={chatBodyRef}>
           <p className={styles.system}>Hello! What can i do for you?</p>
-          {chatHistory.map((chatmessage) =>
+          {chatHistory.map((chatmessage, index) =>
             chatmessage.author === "user" ? (
-              <p key={chatmessage.message} className={styles.user}>
+              <p key={index} className={styles.user}>
                 {chatmessage.message}
               </p>
             ) : (
-              <p key={chatmessage.message} className={styles.system}>
+              <p key={index} className={styles.system}>
                 {chatmessage.message}
               </p>
             )
           )}
         </div>
-        <div id='end-of-chat'></div>
         <div className={styles.offcanvasfooter}>
           <input
+            id="inputMessage"
             type="text"
             value={message}
             onChange={(m) => setMessage(m.target.value)}
           />
           <button
-            className={`btn btn-success ${styles.sendmessage}`}
-            onClick={message.length > 0 ? () => sendquestion() : () => {}}
+            className={`btn ${styles.sendmessage}`}
+            onClick={message.length > 0 ? () => sendquestion() : () => { }}
           >
             Send
           </button>
