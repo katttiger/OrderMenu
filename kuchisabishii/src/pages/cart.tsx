@@ -6,6 +6,8 @@ export const Cart = () => {
   const { cart, clearCart, addToCart, removeFromCart } = useContext(CartContext);
   const [total, setTotal] = useState(0);
   const [tableCode, setTableCode] = useState("");
+  let isItemsInCart = cart.length === 0;
+  const [isPayed, setPayed] = useState<boolean>(isItemsInCart);
 
   const handleChange = (event: any) => {
     const newValue = event.target.value.replace(/\D/g, "");
@@ -14,7 +16,14 @@ export const Cart = () => {
     setTableCode(finalValue.toString());
   };
 
+  const handlePayment = () => {
+    clearCart();
+    setPayed(true)
+    //Display "Thank you for your purchase"?
+  };
+
   useEffect(() => {
+    setPayed(isItemsInCart);
     let currentTotal = 0;
     cart.forEach((item) => (currentTotal += item.totalItemPrice));
     setTotal(currentTotal);
@@ -33,6 +42,9 @@ export const Cart = () => {
 
   return (
     <>
+      {/* Ternery expression: If payed!=true => Show order
+      else => display thank you
+      */}
       <div className={styles.MenuContainer}>
         <div className={`${styles.Menu}`} style={{ textDecoration: "underline" }}>
           Order
@@ -79,9 +91,9 @@ export const Cart = () => {
           </tbody>
         </table>
       </div>
-
+      {/* To develop: "Your order will arrive shortly" + "timer" */}
       <div className={styles.cartFooter}>
-        {cart.length > 0 ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchasing!</h4>}
+        {cart.length > 0 && !isPayed ? <h4>Total: {total}:-</h4> : <h4>Thank you for purchase!</h4>}
         <input
           onChange={handleChange}
           type="number"
@@ -91,15 +103,15 @@ export const Cart = () => {
           placeholder="Table Code"
           value={tableCode}
         ></input>
+
         <button
+          // disabled={!isPayed}
           className={
-            cart.length > 0 ? "btn text-black font-weight-bold" : "btn btn-light text-white"
-          }
-          onClick={() => clearCart()}
+            cart.length > 0 && !isPayed ? "btn text-black font-weight-bold" : "btn btn-light text-white disabled"
+          } onClick={() => handlePayment()}
         >
           <p>Send Order</p>
         </button>
-        {/* <h4>Payment</h4> */}
       </div>
     </>
   );

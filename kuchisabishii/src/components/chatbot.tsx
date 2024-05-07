@@ -69,6 +69,7 @@ export const Chatbot = () => {
           <h5 id="offcanvasExampleLabel">Bichiibot</h5>
           <button
             type="button"
+            //className={`btn-close ${styles.xButtonImage}`}
             className="btn-close"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
@@ -92,6 +93,7 @@ export const Chatbot = () => {
         <div className={styles.offcanvasfooter}>
           <input
             id="inputMessage"
+            className={styles.inputMessageclass}
             type="text"
             value={message}
             onChange={(m) => setMessage(m.target.value)}
@@ -103,7 +105,7 @@ export const Chatbot = () => {
             Send
           </button>
         </div>
-      </div>
+      </div >
     </>
   );
 };
