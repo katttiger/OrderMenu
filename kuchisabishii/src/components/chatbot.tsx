@@ -19,7 +19,7 @@ export const Chatbot = () => {
     console.log(message);
     sendQuestionToChatApi();
     setMessage("");
-    
+
   };
 
   const sendQuestionToChatApi = async () => {
@@ -41,12 +41,10 @@ export const Chatbot = () => {
       .catch((err) => console.log(err));
   };
 
-
   return (
     <>
       <i
-        className={`fas fa-regular fa-comments fa-2xl ${styles.chatbot}`}
-        
+        className={`fas fa-regular fa-comments fa-2x ${styles.chatbot}`}
         data-bs-toggle="offcanvas"
         data-bs-target="#chatBot"
       ></i>
@@ -63,13 +61,12 @@ export const Chatbot = () => {
             type="button"
             className="btn-close"
             data-bs-dismiss="offcanvas"
-            data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>
         </div>
 
         <div className={styles.offcanvasChatbody}>
-          <p className={styles.system}>Hello! What can i do for you?</p>
+          <p className={styles.system}>Hello! What can I do for you?</p>
           {chatHistory.map((chatmessage) =>
             chatmessage.author === "user" ? (
               <p key={chatmessage.message} className={styles.user}>
@@ -91,8 +88,7 @@ export const Chatbot = () => {
           />
           <button
             className={`btn btn-success ${styles.sendmessage}`}
-            onClick={message.length > 0 ? () => sendquestion() : () => {}}
-          >
+            onClick={message.length > 0 ? () => sendquestion() : () => { }}>
             Send
           </button>
         </div>

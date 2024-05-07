@@ -6,13 +6,16 @@
     align-items: center;
     justify-content: center;
     color: white;
+
+    background-color: var(--primary-color);
 }
 
-i{
+i {
     align-self: center;
     justify-content: center;
 }
-.offcanvasfooter{
+
+.offcanvasfooter {
     margin-top: 2em;
 }
 
@@ -39,8 +42,8 @@ input {
 
 .sendmessage {
     position: absolute;
-    bottom:0;
-    right:0;
+    bottom: 0;
+    right: 0;
     height: 2em;
     margin-right: .5em;
 }
@@ -67,4 +70,3 @@ input {
     text-align: start;
     margin-left: auto;
 }
-
